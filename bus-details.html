@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/mobileui/osahanbus/bus-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:02 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content>
+    <meta name="author" content>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>OsahanBus - Bus Booking HTML Mobile Template</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="vendor/icons/icofont.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/other_custom.css">
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <link href="css/custom.css" rel="stylesheet">
+
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="Bus-Details padding-bt">
+        <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
+            <h5 class="font-weight-normal mb-0 text-white">
+                <a class="text-danger mr-3" href="listing.html"><i class="icofont-rounded-left"></i></a>
+                Bus Details
+            </h5>
+            <div class="ml-auto d-flex align-items-center">
+                <a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i
+                        class="icofont-ui-edit"></i></a>
+            </div>
+        </div>
+
+        <div class="list_item m-0 bg-white">
+            <div class="px-3 py-3 tic-div border-bottom d-flex">
+                <img src="img/listing/item1.png" class="img-fluid border rounded p-1 shape-img mr-3">
+                <div class="w-100">
+                    <h6 class="my-1 l-hght-18 font-weight-bold">Bus Plate Number</h6>
+                    <div class="start-rating f-10">
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-muted"></i>
+                        <span class="text-dark">4.0</span>
+                        <div class="d-flex mt-2">
+                            <p class="m-0"><i class="icofont-google-map mr-1 text-danger"></i><span
+                                    class="small">Destination Address</span></p>
+                            <p class="small ml-auto mb-0"><i class="icofont-bus mr-1 text-danger"></i> St. KES 1,200</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-3">
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Driver</small>
+                        <p class="small mb-0 l-hght-14">Driver's Name</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Origin Address</small>
+                        <p class="small mb-0 l-hght-14">From Location</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Depature</small>
+                        <p class="small mb-0 l-hght-14">12 March, 2024 - 12:30 Pm</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Arrival</small>
+                        <p class="small mb-0 l-hght-14">12 March, 2024 - 12:30 Pm</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Occupied:Empty Seats</small>
+                        <p class="small mb-0 l-hght-14">25:11</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Trip Type</small>
+                        <p class="small mb-0 l-hght-14">Round Trid</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-pills mb-0 nav-justified bg-white px-3 py-2 border-top border-bottom" id="pills-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                    aria-controls="pills-home" aria-selected="true"><i class="icofont-info-circle"></i> Info</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                    aria-controls="pills-profile" aria-selected="false"><i class="icofont-law-order"></i>Arrangement</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                    aria-controls="pills-contact" aria-selected="false"><i class="icofont-food-basket"></i>Procucts</a>
+            </li>
+        </ul>
+        <div>
+            <div class="active" id="pills-home">
+                <div class="bus-details pt-3 pb-0 px-3">
+                    <div class="info" id="info">
+                        <h6 class="font-weight-normal">About Niloy Poribohon</h6>
+                        <p class="text-muted small mb-3">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ticket p-3" id="pills-profile">
+                <h6 class="font-weight-normal">Bus Virtualization</h6>
+                <div class="select-seat row bg-white mx-0 px-3 pt-3 pb-1 mb-3 rounded-1 shadow-sm">
+                    <div class="col-8 pl-0">
+                        <div class="d-flex">
+                            <div class="sold text-center">
+                                <img src="img/sold-seat.png" class="img-fluid mb-1">
+                                <p class="small f-10">Sold Out</p>
+                            </div>
+                            <div class="sold text-center mx-3">
+                                <img src="img/available-seat.png" class="img-fluid mb-1">
+                                <p class="small f-10">Available</p>
+                            </div>
+                            <div class="sold text-center">
+                                <img src="img/selected-seat.png" class="img-fluid mb-1">
+                                <p class="small f-10">Selected</p>
+                            </div>
+                        </div>
+
+                        <div class="select-seat">
+                            <div class="checkboxes-seat mt-4">
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="a1" autocomplete="off">
+                                        A1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="a2" autocomplete="off">
+                                        A2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="b1" autocomplete="off">
+                                        B1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="b2" autocomplete="off">
+                                        B2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="c1" autocomplete="off" checked disabled>
+                                        C1
+                                    </label>
+                                    <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="c2" autocomplete="off" checked disabled>
+                                        C2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-danger small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="d1" autocomplete="off" checked disabled>
+                                        D1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="d2" autocomplete="off">
+                                        D2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="e1" autocomplete="off">
+                                        E1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="e2" autocomplete="off">
+                                        E2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="f1" autocomplete="off">
+                                        F1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="f2" autocomplete="off">
+                                        F2
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="g1" autocomplete="off">
+                                        G1
+                                    </label>
+                                    <label class="btn check-seat btn-success small btn-sm rounded mr-2 mb-2">
+                                        <input type="checkbox" name="g2" autocomplete="off">
+                                        G2
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 text-right pr-0">
+                        <img src="img/driver.png" class="img-fluid mb-4">
+                        <div class="checkboxes-seat mt-4">
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-success small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="a3" autocomplete="off">
+                                    A3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-success small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="b3" autocomplete="off">
+                                    B3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-danger small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="c3" autocomplete="off" checked disabled>
+                                    C3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-danger small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="d3" autocomplete="off" checked disabled>
+                                    D3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-success small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="e3" autocomplete="off">
+                                    E3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-success small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="f3" autocomplete="off">
+                                    F3
+                                </label>
+                            </div>
+                            <div class="btn-group btn-group-toggle d-block mb-1" data-toggle="buttons">
+                                <label class="btn check-seat btn-success small btn-sm rounded mb-2">
+                                    <input type="checkbox" name="g3" autocomplete="off">
+                                    G3
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pills-contact">
+                <div class="p-3">
+                    <h6 class="font-weight-normal">Passanger Products</h6>
+                    <div class="row m-0 justify-content-around">
+                        <!-- Just add more below -->
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        <div class="col-6 row rounded-2 unit-product">
+                            <div class="col-12 mt-2">
+                                <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt style="width: 100%;">
+                            </div>
+                            <div class="col-12">
+                                <div class="start-rating f-10 my-2">
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-danger"></i>
+                                    <i class="icofont-star text-muted"></i>
+                                    <span class="text-dark">4.0</span>
+                                </div>
+                                <span class="text-success small pt-1 fw-bold">57</span>
+                                <span class="text-muted small pt-2 ps-1">Quantity</span>
+                                <span class="text-success small pt-1 fw-bold">350K</span>
+                                <span class="text-muted small pt-2 ps-1">Revenue</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-bottom view-seatbt p-3">
+        <a href="select-seat.html" class="btn btn-danger btn-block osahanbus-btn rounded-1">Cancel Trip</a>
+    </div>
+
+    <nav id="main-nav">
+        <ul class="second-nav">
+            <li>
+                <a href="#" class="bg-danger sidebar-user d-flex align-items-center py-4 px-3 border-0 mb-0">
+                    <img src="img/user1.jpg" class="img-fluid rounded-pill mr-3">
+                    <div class="text-white">
+                        <h6 class="mb-0">I Am Osahan</h6>
+                        <small>+91 12345-67890</small><br>
+                        <span class="f-10 text-white-50">Version 1.32</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="index.html"><i class="icofont-page mr-2"></i> Splash</a>
+            </li>
+            <li>
+                <a href="landing.html"><i class="icofont-stylish-right mr-2"></i> Landing</a>
+            </li>
+            <li>
+                <a href="get-started.html"><i class="icofont-ui-play mr-2"></i> Get Started</a>
+            </li>
+            <li>
+                <a href="#"><i class="icofont-key mr-2"></i> Authentication</a>
+                <ul>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="change-password.html">Change Password</a></li>
+                    <li><a href="verification.html">Verification</a></li>
+                </ul>
+            </li>
+            <li><a href="home.html"><i class="icofont-ui-home mr-2"></i> Homepage</a></li>
+            <li><a href="gift-card.html"><i class="icofont-sale-discount mr-2"></i> Offers</a></li>
+            <li><a href="listing.html"><i class="icofont-list mr-2"></i> Listing</a></li>
+            <li><a href="bus-details.html"><i class="icofont-file-text mr-2"></i> Bus Detail</a></li>
+            <li><a href="select-seat.html"><i class="icofont-check-circled mr-2"></i> Select Seat</a></li>
+            <li><a href="payment.html"><i class="icofont-id-card mr-2"></i> Checkout</a></li>
+            <li><a href="payment-card.html"><i class="icofont-ui-v-card mr-2"></i> Payment</a></li>
+            <li>
+                <a href="#"><i class="icofont-user-alt-3 mr-2"></i> Profile Pages</a>
+                <ul>
+                    <li><a href="profile.html"> Profile</a></li>
+                    <li><a href="your-ticket.html"> Your Ticket</a></li>
+                    <li><a href="my-ticket.html"> History</a></li>
+                    <li><a href="customer-feedback.html"> Customer Feedback</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icofont-page mr-2"></i> Extra Pages</a>
+                <ul>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="notification.html">Notification</a></li>
+                    <li><a href="not-available.html">Not Available</a></li>
+                    <li><a href="404.html"> Not Found</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icofont-link mr-2"></i> Navigation Link Example</a>
+                <ul>
+                    <li>
+                        <a href="#">Link Example 1</a>
+                        <ul>
+                            <li>
+                                <a href="#">Link Example 1.1</a>
+                                <ul>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Link Example 1.2</a>
+                                <ul>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Link Example 2</a></li>
+                    <li><a href="#">Link Example 3</a></li>
+                    <li><a href="#">Link Example 4</a></li>
+                    <li data-nav-custom-content>
+                        <div class="custom-message">
+                            You can add any custom content to your navigation items. This text is just an example.
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="bottom-nav">
+            <li class="email">
+                <a class="text-danger nav-item text-center" href="home.html" tabindex="0" role="menuitem">
+                    <p class="h5 m-0"><i class="icofont-ui-home text-danger"></i></p>
+                    Home
+                </a>
+            </li>
+            <li class="github">
+                <a href="gift-card.html" class="nav-item text-center" tabindex="0" role="menuitem">
+                    <p class="h5 m-0"><i class="icofont-sale-discount"></i></p>
+                    Offer
+                </a>
+            </li>
+            <li class="ko-fi">
+                <a href="support.html" class="nav-item text-center" tabindex="0" role="menuitem">
+                    <p class="h5 m-0"><i class="icofont-support-faq"></i></p>
+                    Help
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="vendor/jquery/jquery.min.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
+
+    <script type="2154b8e373ba1512900ef4dd-text/javascript" src="vendor/slick/slick.min.js"></script>
+
+    <script type="2154b8e373ba1512900ef4dd-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+
+    <script src="js/custom.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
+    <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
+    <!-- <script>
+        setInterval(() => {
+            location.reload()
+        }, 3000)
+    </script> -->
+</body>
+
+<!-- Mirrored from askbootstrap.com/mobileui/osahanbus/bus-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:03 GMT -->
+
+</html>
