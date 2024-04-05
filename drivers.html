@@ -25,10 +25,10 @@
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
                 <a class="text-danger mr-3" href="payment.html"><i class="icofont-rounded-left"></i></a>
-                Payment
+                My Drivers
             </h5>
             <div class="ml-auto d-flex align-items-center">
-                <a class="h4 m-0 text-white ml-auto" onclick="document.getElementById('new-bus-form').style.display='block'">
+                <a class="h4 m-0 text-white ml-auto" onclick="document.getElementById('new-driver-form').style.display='block'">
                     <i class="icofont-plus-square"></i>
                 </a>
             </div>
@@ -44,7 +44,7 @@
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col col-sm-3 col-xs-12">
-                                                    <h6 class="title">Pending Trips<span>| Today</span></h6>
+                                                    <h6 class="title">Drivers</h6>
                                                 </div>
                                                 <div class="col-sm-9 col-xs-12 text-right">
                                                     <div class="btn_group">
@@ -54,33 +54,27 @@
                                             </div>
                                         </div>
                                         <div class="panel-body table-responsive">
-                                            <table class="table upcoming-trips-table">
+                                            <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Plate</th>
-                                                        <th>Occupancy</th>
-                                                        <th>Price(KES)</th>
-                                                        <th>Type</th>
+                                                        <th>Name</th>
+                                                        <th>Phone</th>
+                                                        <th>Gender</th>
+                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr onclick="alert('testing row click')">
-                                                        <td>KCQ123T</td>
-                                                        <td>98</td>
-                                                        <td>1,500</td>
-                                                        <td>Round Trip</td>
+                                                        <td>James Kimani</td>
+                                                        <td>0701910146</td>
+                                                        <td>Male</td>
+                                                        <td>Occupied</td>
                                                     </tr>
                                                     <tr onclick="alert('testing row click')">
-                                                        <td>KCQ123T</td>
-                                                        <td>98</td>
-                                                        <td>1,500</td>
-                                                        <td>Round Trip</td>
-                                                    </tr>
-                                                    <tr onclick="alert('testing row click')">
-                                                        <td>KCQ123T</td>
-                                                        <td>98</td>
-                                                        <td>1,500</td>
-                                                        <td>Round Trip</td>
+                                                        <td>James Kimani</td>
+                                                        <td>0701910146</td>
+                                                        <td>Male</td>
+                                                        <td>Unoccupied</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -119,39 +113,46 @@
         </div>
     </div>
 
-    <div class="new-driver-form" id="new-bus-form">
+    <div class="new-driver-form" id="new-driver-form">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
-                <a class="text-danger mr-3" onclick="document.getElementById('new-bus-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
-                New Passanger Bus
+                <a class="text-danger mr-3" onclick="document.getElementById('new-driver-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
+                New Driver
             </h5>
         </div>
         <form action="verification.html" class="p-4">
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">License Plate</label>
+                <label class="text-muted f-10 mb-1">Full Name</label>
                 <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter plate No.">
+                <input type="text" class="form-control" placeholder="Enter name">
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Number of Seats</label>
-                <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter No. of Seats">
+                <label class="text-muted f-10 mb-1">Gender</label>
+                <select name="" id="" class="form-control">
+                    <option value="">Female</option>
+                    <option value="">Male</option>
+                    <option value="">Rather Not Say</option>
+                </select>
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Model</label>
-                <input type="number" class="form-control" placeholder="Enter Model Type">
+                <label class="text-muted f-10 mb-1">National ID</label>
+                <input type="number" class="form-control" placeholder="Enter ID Number">
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Colour</label>
-                <input type="number" class="form-control" placeholder="Enter bus colour">
+                <label class="text-muted f-10 mb-1">Phone Number</label>
+                <input type="number" class="form-control" placeholder="Enter Phone Number">
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Seat Configuration</label>
-                <input type="text" class="form-control" placeholder="e.g 4 x Rows = No. Seats">
+                <label class="text-muted f-10 mb-1">Email</label>
+                <input type="text" class="form-control" placeholder="Enter Email Address">
             </div>
-            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER BUS</button>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Driver's Liscence</label>
+                <input type="text" class="form-control" placeholder="Enter Driver's Liscence">
+            </div>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">ADD DRIVER</button>
             <p class="text-muted text-center small">
-                Please Register QC Paases Buses for passanger saftey
+                Please Register Qualified Drivers for Passanger Safety
             </p>
         </form>
     </div>
@@ -172,11 +173,6 @@
         integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
         data-cf-beacon='{"rayId":"86ef9b2afb3565e9","version":"2024.3.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
         crossorigin="anonymous"></script>
-        <!-- <script>
-            setInterval(() => {
-                location.reload()
-            }, 4000)
-        </script> -->
 </body>
 
 <!-- Mirrored from askbootstrap.com/mobileui/osahanbus/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:32:58 GMT -->
