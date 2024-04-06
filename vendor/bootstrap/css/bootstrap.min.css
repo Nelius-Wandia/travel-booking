@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+    --tomato: rgba(199, 0, 0, 0.861);
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -7337,6 +7338,10 @@ button.bg-secondary:hover {
 
 .bg-success {
     background-color: #28a745 !important
+}
+
+.bg-tomato {
+    background-color: var(--tomato) !important
 }
 
 a.bg-success:focus,

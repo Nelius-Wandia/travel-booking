@@ -28,7 +28,8 @@
                 My Drivers
             </h5>
             <div class="ml-auto d-flex align-items-center">
-                <a class="h4 m-0 text-white ml-auto" onclick="document.getElementById('new-driver-form').style.display='block'">
+                <a class="h4 m-0 text-white ml-auto"
+                    onclick="document.getElementById('new-driver-form').style.display='block'">
                     <i class="icofont-plus-square"></i>
                 </a>
             </div>
@@ -64,18 +65,19 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr onclick="alert('testing row click')">
+                                                    <tr onclick="document.getElementById('driver-popup-page').style.display='flex'">
                                                         <td>James Kimani</td>
                                                         <td>0701910146</td>
                                                         <td>Male</td>
                                                         <td>Occupied</td>
                                                     </tr>
-                                                    <tr onclick="alert('testing row click')">
+                                                    <tr onclick="document.getElementById('driver-popup-page').style.display='flex'">
                                                         <td>James Kimani</td>
                                                         <td>0701910146</td>
                                                         <td>Male</td>
-                                                        <td>Unoccupied</td>
+                                                        <td>Occupied</td>
                                                     </tr>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -116,7 +118,8 @@
     <div class="new-driver-form" id="new-driver-form">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
-                <a class="text-danger mr-3" onclick="document.getElementById('new-driver-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
+                <a class="text-danger mr-3" onclick="document.getElementById('new-driver-form').style.display='none'"><i
+                        class="icofont-rounded-left"></i></a>
                 New Driver
             </h5>
         </div>
@@ -157,6 +160,49 @@
         </form>
     </div>
 
+    <div class="driver-popup-page container" id="driver-popup-page">
+        <div class="row justify-content-around py-5 px-2 rounded-2">
+            <div class="col-12 text-right">
+                <div class="icofont-exit h5" onclick="document.getElementById('driver-popup-page').style.display='none'"></div>
+            </div>
+            <p class="small mb-0 l-hght-14 col-12 text-center py-3 font-weight-bold">DRIVER DETAILS</p>
+            <div class="bg-white mb-2 col-12">
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Driver</small>
+                        <p class="small mb-0 l-hght-14">Driver's Name</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Phone Number</small>
+                        <p class="small mb-0 l-hght-14">+254795359098</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">No. of Trips</small>
+                        <p class="small mb-0 l-hght-14">80</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Ratings</small>
+                        <p class="small mb-0 l-hght-14">67</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">National ID</small>
+                        <p class="small mb-0 l-hght-14">41624178</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Status</small>
+                        <p class="small mb-0 l-hght-14">BOOKED</p>
+                    </div>
+                </div>
+            </div>
+            <button class="col-5 p-2 rounded-2 bg-danger text-white ring-0">Edit</button>
+            <button class="col-5 p-2 rounded-2 bg-tomato text-white ring-0">Delete</button>
+        </div>
+    </div>
+
     <script src="vendor/jquery/jquery.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
 
@@ -172,7 +218,8 @@
         src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
         integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
         data-cf-beacon='{"rayId":"86ef9b2afb3565e9","version":"2024.3.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+        </script>
 </body>
 
 <!-- Mirrored from askbootstrap.com/mobileui/osahanbus/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:32:58 GMT -->
