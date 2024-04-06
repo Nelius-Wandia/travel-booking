@@ -43,3 +43,21 @@ table tr:not(:last-child) {
     z-index: 5000;
     overflow: auto;
 }
+
+.driver-popup-page {
+    background-color: rgba(255, 255, 255, 0.758);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.driver-popup-page > div{
+    background-color: white;
+    box-shadow: 0 0 20px gray;
+    width: 90%;
+    border: 1px solid gray;
+}
