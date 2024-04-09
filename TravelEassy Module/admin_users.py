@@ -1,3 +1,8 @@
+import db_connection as db
+
+db.cursor.execute()
+db.conn.commit()
+
 class AdminUser:
     pass
 
