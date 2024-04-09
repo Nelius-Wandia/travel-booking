@@ -86,3 +86,8 @@ table tr:not(:last-child) {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.all-seats > div div{
+    padding: 10px 0 0 0 !important;
+
+}
