@@ -1,13 +1,35 @@
 import db_connection as db
 
-db.cursor.execute()
-db.conn.commit()
-
 class AdminUser:
-    pass
+    def CreateUserTable(self):
+        sql_query = """create table if not exists admin_users(
+                id integer primary key,
+                company_name text,
+                phone integer,
+                email text,
+                means_type text,
+                till_number integer,
+                banck_account integer,
+                crypto_address text,
+                verification text,
+                revenue integer,
+                total_trips integer,
+                logo_url text,
+                updated_time text,
+                created_time text
+                )"""
+        db.cursor.execute(sql_query)
+        db.conn.commit()
 
 
-# Cols - (id, company_name, phone, email, means_type, till_number, bank_acc, crypto_addr, verification, revenue, total_trips, logo_url, updated_time, created_time)
+
+
+
+
+
+
+
+# Cols - (id, company_name, phone, email, means_type, till_number, bank_acc, crypto_addr, verification(json), revenue, total_trips, logo_url, updated_time, created_time)
 
 # FUNCTIONS
 # Rules(Each function takes its own parameters)
@@ -21,3 +43,5 @@ class AdminUser:
 # - IncreamentTrips - (Increament number of trips for the user)
 # - NotifyUser - (Notify user by sms/email address)
 # - SetUserdetails - (Set user details)
+# - CreateUserTable - (Create user table)
+# - DeleteUserTable - (Delete user table)
