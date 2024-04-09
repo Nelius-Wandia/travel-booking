@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content>
+    <meta name="author" content>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>OsahanBus - Bus Booking HTML Mobile Template</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/icons/icofont.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/other_custom.css">
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <link href="vendor/select-tool/dist/css/select2.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+</head>
+
+<body class="bg-warning">
+    <div class="osahan-verification padding-bt">
+        <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
+            <h5 class="font-weight-normal mb-0 text-white">
+                <a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
+                Parcels
+            </h5>
+            <div class="ml-auto d-flex align-items-center">
+                <a class="h4 m-0 text-white ml-auto"
+                    onclick="document.getElementById('new-bus-form').style.display='block'">
+                    <i class="icofont-plus-square"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-heading container pt-2">
+            <div class="row px-2">
+                <div class="col-11 text-right">
+                    <div class="btn_group">
+                        <input type="text" class="form-control" placeholder="Parcel Search .......">
+                    </div>
+                </div>
+                <div class="col-1 text-center px-2 filter_box">
+                    <i class="icofont-filter h5"></i>
+                    <select name="" id="" class="h-100 w-100 form-control">
+                        <option value="">Complete</option>
+                        <option value="">Pending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="container parcel-list" style="min-height: 50px;">
+            <div class="bg-white rounded-1 shadow-sm p-3 mb-3 mt-2 col-12">
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Sender Name</small>
+                        <p class="small mb-0 l-hght-14">Andrew Macharia</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Receiver Name</small>
+                        <p class="small mb-0 l-hght-14">machariaandr****</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Sender Phone</small>
+                        <p class="small mb-0 l-hght-14">254795359098</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Receiver Phone</small>
+                        <p class="small mb-0 l-hght-14">254791216702</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Parcel</small>
+                        <p class="small mb-0 l-hght-14">Plastic Cup</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Amount</small>
+                        <p class="small mb-0 l-hght-14">KES 1,000</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-12 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Description</small>
+                        <p class="small mb-0 l-hght-14">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum est magni quia quibusdam
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mx-0 mb-1 flex align-items-center">
+                    <i class="icofont-bus-alt-3 m-0 px-1"></i>
+                    <a href="bus-details.html">Bus Details</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-1 shadow-sm p-3 mb-3 mt-2 col-12">
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Sender Name</small>
+                        <p class="small mb-0 l-hght-14">Andrew Macharia</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Receiver Name</small>
+                        <p class="small mb-0 l-hght-14">machariaandr****</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Sender Phone</small>
+                        <p class="small mb-0 l-hght-14">254795359098</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Receiver Phone</small>
+                        <p class="small mb-0 l-hght-14">254791216702</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-1">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Parcel</small>
+                        <p class="small mb-0 l-hght-14">Plastic Cup</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Amount</small>
+                        <p class="small mb-0 l-hght-14">KES 1,000</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-12 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Description</small>
+                        <p class="small mb-0 l-hght-14">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum est magni quia quibusdam
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mx-0 mb-1 flex align-items-center">
+                    <i class="icofont-bus-alt-3 m-0 px-1"></i>
+                    <a href="bus-details.html">Bus Details</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="osahan-signup new-driver-form" id="new-bus-form">
+        <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+            style="position: sticky !important; top: 0;z-index: 2000;">
+            <h5 class="font-weight-normal mb-0 text-white">
+                <a class="text-danger mr-3" href="#" onclick="document.getElementById('new-bus-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
+                New Package
+            </h5>
+        </div>
+        <div class="p-3">
+            <form action="verification.html">
+                <label class="text-muted f-10 mb-1 text-center" style="width: 100%;text-align: center;">Parcel Details</label>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Select Trip</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">KAJ 906 K</option>
+                        <option value="">KAJ 906 K</option>
+                        <option value="">KAJ 906 K</option>
+                        <option value="">KAJ 906 K</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Sender's Name</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter Company Name" required> -->
+                    <input type="text" class="form-control" placeholder="Enter full Name">
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Sender's Phone Number</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
+                    <input type="text" class="form-control" placeholder="Enter Phone Number">
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Receiver's Name</label>
+                    <!-- <input type="email" class="form-control" placeholder="Enter Email Address" required> -->
+                    <input type="email" class="form-control" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Receiver's Phone Number</label>
+                    <!-- <input type="email" class="form-control" placeholder="Enter Email Address" required> -->
+                    <input type="email" class="form-control" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Package Name</label>
+                    <!-- <input type="email" class="form-control" placeholder="Enter Email Address" required> -->
+                    <input type="email" class="form-control" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label class="text-muted f-10 mb-1">Package Description</label>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER PACKAGE</button>
+                <p class="text-muted text-center small">Please check package for passanger saftey</p>
+            </form>
+        </div>
+    </div>
+
+    <script type="96d284817fd6e0fdc8d5ba40-text/javascript" src="vendor/slick/slick.min.js"></script>
+
+    <script src="vendor/select-tool/dist/js/select2.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
+
+    <script type="96d284817fd6e0fdc8d5ba40-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+
+    <script src="js/custom.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
+    <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
+</body>
+
+</html>
