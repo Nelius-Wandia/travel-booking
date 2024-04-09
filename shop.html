@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from askbootstrap.com/mobileui/osahanbus/my-ticket.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:10 GMT -->
-
   <head>
     <meta charset="utf-8" />
     <meta
@@ -14,417 +12,326 @@
     <title>OsahanBus - Bus Booking HTML Mobile Template</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
     <link
       href="vendor/icons/icofont.min.css"
       rel="stylesheet"
       type="text/css"
     />
-
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/other_custom.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="vendor/slick/slick-theme.min.css"
     />
-    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/shop.css">
+    <link href="vendor/select-tool/dist/css/select2.min.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
-
     <link href="vendor/sidebar/demo.css" rel="stylesheet" />
-    <!-- <style>
-        body{
-            overflow: hidden;
-        }
-    </style> -->
   </head>
 
-  <body class="bg-light">
-    <div class="my-shop padding-bt">
-      <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
+  <body class="bg-warning">
+    <div class="osahan-verification padding-bt">
+      <div
+        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+      >
         <h5 class="font-weight-normal mb-0 text-white">
-            <a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
-            Products
+          <a class="text-danger mr-3" href="home.html"
+            ><i class="icofont-rounded-left"></i
+          ></a>
+          Products
         </h5>
         <div class="ml-auto d-flex align-items-center">
-            <a  
-            href="shop.html#add-product-popup"
-             class="h4 m-0 text-white ml-auto"
-               >
-                <i class="icofont-plus-square"></i>
-            </a>
-        </div>
-    </div>
-
-      <div class="row main-products" id="main-products" style="width: 100%">
-        <div class="col-6 bootstrap snippets bootdeys">
-          <!-- product -->
-          <div class="product-content product-wrap clearfix">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                  <img
-                    src="https://www.bootdey.com/image/194x228/87CEFA"
-                    alt="194x228"
-                    style="width: 100% !important"
-                  />
-                  <!-- <span class="tag2 hot"> HOT </span> -->
-                </div>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="product-deatil">
-                  <h5 class="name">
-                    <a href="#"> Minute Maid <span>Mango 500ml</span> </a>
-                  </h5>
-                  <p class="price-container">
-                    <span style="color: #2c2c54">KES 99</span>
-                  </p>
-                  <span class="tag1"></span>
-                </div>
-                <!-- <div class="description">
-                      <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
-                    </div> -->
-                <div class="product-info smart-form">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <a
-                        href="#product-popup"
-                        class="btn btn-danger"
-                        style="font-size: small; font-weight: bold"
-                        onclick="document.getElementById('product-popup').style.display='block'"
-                        >EDIT</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end product -->
-        </div>
-        <div class="col-6 bootstrap snippets bootdeys">
-          <!-- product -->
-          <div class="product-content product-wrap clearfix">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                  <img
-                    src="https://www.bootdey.com/image/194x228/87CEFA"
-                    alt="194x228"
-                    style="width: 100% !important"
-                  />
-                  <!-- <span class="tag2 hot"> HOT </span> -->
-                </div>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="product-deatil">
-                  <h5 class="name">
-                    <a href="#"> Minute Maid <span>Mango 500ml</span> </a>
-                  </h5>
-                  <p class="price-container">
-                    <span>KES 99</span>
-                  </p>
-                  <span class="tag1"></span>
-                </div>
-                <!-- <div class="description">
-                      <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
-                    </div> -->
-                <div class="product-info smart-form">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-danger"
-                        style="font-size: small; font-weight: bold"
-                        >EDIT</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end product -->
-        </div>
-        <div class="col-6 bootstrap snippets bootdeys">
-          <!-- product -->
-          <div class="product-content product-wrap clearfix">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                  <img
-                    src="https://www.bootdey.com/image/194x228/87CEFA"
-                    alt="194x228"
-                    style="width: 100% !important"
-                  />
-                  <!-- <span class="tag2 hot"> HOT </span> -->
-                </div>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="product-deatil">
-                  <h5 class="name">
-                    <a href="#"> Minute Maid <span>Mango 500ml</span> </a>
-                  </h5>
-                  <p class="price-container">
-                    <span>KES 99</span>
-                  </p>
-                  <span class="tag1"></span>
-                </div>
-                <!-- <div class="description">
-                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
-                      </div> -->
-                <div class="product-info smart-form">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-danger"
-                        style="font-size: small; font-weight: bold"
-                        >EDIT</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end product -->
-        </div>
-        <div class="col-6 bootstrap snippets bootdeys">
-          <!-- product -->
-          <div class="product-content product-wrap clearfix">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                  <img
-                    src="https://www.bootdey.com/image/194x228/87CEFA"
-                    alt="194x228"
-                    style="width: 100% !important"
-                  />
-                  <!-- <span class="tag2 hot"> HOT </span> -->
-                </div>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="product-deatil">
-                  <h5 class="name">
-                    <a href="#"> Minute Maid <span>Mango 500ml</span> </a>
-                  </h5>
-                  <p class="price-container">
-                    <span>KES 99</span>
-                  </p>
-                  <span class="tag1"></span>
-                </div>
-                <!-- <div class="description">
-                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
-                      </div> -->
-                <div class="product-info smart-form">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-danger"
-                        style="font-size: small; font-weight: bold"
-                        >EDIT</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end product -->
-        </div>
-      </div>
-    </div>
-<!-- ######################## EDIT PRODUCT FORM ################################### -->
-    <div id="product-popup" class="product-edit-popup">
-        <div
-        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
-        <h5 class="font-weight-normal mb-0 text-white">
-          <a class="text-danger mr-3" href="#main-products"
+          <a
+            class="h4 m-0 text-white ml-auto"
+            onclick="document.getElementById('new-driver-form').style.display='block'"
           >
-          <i class="icofont-rounded-left" ></i></a>
-          Edit Product
-        </h5>
+            <i class="icofont-plus-square"></i>
+          </a>
+        </div>
       </div>
-      <div class="popup-form row justify-content-center">
-        <form action="#" class="productform" class="col-12">
-          <div class="text-center mb-3 position-relative">
-            <div class="position-absolute edit-bt">
-              <label for="upload-photo" class="mb-0"
-                ><span class="icofont-pencil-alt-5 text-white"></span
-              ></label>
-              <input type="file" name="photo" id="upload-photo" />
+      <div class="container d-flex flex-wrap justify-content-around">
+        <div class="col-5 unit-product text-center my-2">
+          <img src="img/customer-support.svg" alt="">
+          <div class="text-center">
+            <p class="m-0" style="font-weight: 550;">Item Name</p>
+            <p class="text-muted m-0" style="font-size: 10px;">
+              Item description
+            </p>
+            <div class="d-flex justify-content-around align-items-center">
+              <p class="m-0" style="font-size: 10px;">AV. 98</p>
+              <p class="m-0" style="font-weight: 600;">KES 90</p>
             </div>
-            <img src="img/profile.jpg" class="rounded-pill" />
+            <p class="m-0 text-center mt-2" onclick="document.getElementById('edit-product-form').style.display='block'">Edit</p>
           </div>
-          <!-- <div class="form-group">
-                    <label class="product-image" style="font-size: xx-small; color: rgb(152, 151, 151);">Product Image</label>
-                    <input type="file" accept="image/*">
-                 </div> -->
-          <div class="form-group">
-            <label class="text-muted f-10 mb-1">Product Name</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter product name"
-            />
+        </div>
+        <div class="col-5 unit-product text-center my-2">
+          <img src="img/customer-support.svg" alt="">
+          <div class="text-center">
+            <p class="m-0" style="font-weight: 550;">Item Name</p>
+            <p class="text-muted m-0" style="font-size: 10px;">
+              Item description
+            </p>
+            <div class="d-flex justify-content-around align-items-center">
+              <p class="m-0" style="font-size: 10px;">AV. 98</p>
+              <p class="m-0" style="font-weight: 600;">KES 90</p>
+            </div>
+            <p class="m-0 text-center mt-2">Edit</p>
           </div>
-          <div class="form-group">
-            <label class="text-muted f-10 mb-1">Price</label>
-            <input
-              type="number"
-              class="form-control"
-              placeholder="Enter product price"
-            />
+        </div>
+        <div class="col-5 unit-product text-center my-2">
+          <img src="img/customer-support.svg" alt="">
+          <div class="text-center">
+            <p class="m-0" style="font-weight: 550;">Item Name</p>
+            <p class="text-muted m-0" style="font-size: 10px;">
+              Item description
+            </p>
+            <div class="d-flex justify-content-around align-items-center">
+              <p class="m-0" style="font-size: 10px;">AV. 98</p>
+              <p class="m-0" style="font-weight: 600;">KES 90</p>
+            </div>
+            <p class="m-0 text-center mt-2">Edit</p>
           </div>
-          <div class="form-group">
-            <label class="text-muted f-10 mb-1">Description</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter product description"
-            />
+        </div>
+        <div class="col-5 unit-product text-center my-2">
+          <img src="img/customer-support.svg" alt="">
+          <div class="text-center">
+            <p class="m-0" style="font-weight: 550;">Item Name</p>
+            <p class="text-muted m-0" style="font-size: 10px;">
+              Item description
+            </p>
+            <div class="d-flex justify-content-around align-items-center">
+              <p class="m-0" style="font-size: 10px;">AV. 98</p>
+              <p class="m-0" style="font-weight: 600;">KES 90</p>
+            </div>
+            <p class="m-0 text-center mt-2">Edit</p>
           </div>
-          <button
-            type="submit"
-            class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1 add-product"
-            style="font-size: x-small; font-weight: bold"
-            onclick="document.getElementById('product-popup').style.display='none'"
-          >
-            Done
-          </button>
-        </form>
+        </div>
       </div>
     </div>
-<!-- ######################## ADD PRODUCT FORM ################################### -->
 
-<div id="add-product-popup" class="add-product-popup">
-  <div
-  class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
->
-  <h5 class="font-weight-normal mb-0 text-white">
-    <a class="text-danger mr-3" href="#"
-      ><i class="icofont-rounded-left"></i
-    ></a>
-    Add Product
-  </h5>
-</div>
-<div class="popup-form row justify-content-center">
-  <form action="#" class="productform" class="col-12">
-    <div class="text-center mb-3 position-relative">
-      <div class="position-absolute edit-bt">
-        <label for="upload-photo" class="mb-0"
-          ><span class="icofont-pencil-alt-5 text-white"></span
-        ></label>
-        <input type="file" name="photo" id="upload-photo" />
-      </div>
-      <img src="img/profile.jpg" class="rounded-pill" />
-    </div>
-    <!-- <div class="form-group">
-              <label class="product-image" style="font-size: xx-small; color: rgb(152, 151, 151);">Product Image</label>
-              <input type="file" accept="image/*">
-           </div> -->
-    <div class="form-group">
-      <label class="text-muted f-10 mb-1">Product Name</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter product name"
-      />
-    </div>
-    <div class="form-group">
-      <label class="text-muted f-10 mb-1">Price</label>
-      <input
-        type="number"
-        class="form-control"
-        placeholder="Enter product price"
-      />
-    </div>
-    <div class="form-group">
-      <label class="text-muted f-10 mb-1">Description</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter product description"
-      />
-    </div>
-    <button
-      type="submit"
-      class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1 add-product"
-      style="font-size: x-small; font-weight: bold"
-    >
-      Add Product
-    </button>
-  </form>
-</div>
-</div>    
-
-
-    <!-- <div class="fixed-bottom p-3">
-      <div class="footer-menu row m-0 bg-danger shadow rounded-2">
+    <div class="fixed-bottom p-3">
+      <div
+        class="footer-menu row m-0 bg-danger shadow rounded-2 justify-content-around"
+      >
         <div class="col-3 p-0 text-center">
-          <a href="home.html" class="home text-white">
+          <a href="home.html" class="home text-white active">
             <span class="icofont-ui-home h5"></span>
             <p class="mb-0 small">Home</p>
           </a>
         </div>
         <div class="col-3 p-0 text-center">
-          <a href="my-ticket.html" class="home text-white active">
-            <span class="icofont-ticket h5"></span>
-            <p class="mb-0 small">My Tickets</p>
+          <a href="my-ticket.html" class="home text-white">
+            <span class="bi bi-cart4 h5"></span>
+            <p class="mb-0 small">My Store</p>
           </a>
         </div>
         <div class="col-3 p-0 text-center">
           <a href="notification.html" class="home text-white">
             <span class="icofont-notification h5"></span>
-            <small class="osahan-n">4</small>
+            <small class="osahan-n">10</small>
             <p class="mb-0 small">Notice</p>
           </a>
         </div>
-        <div class="col-3 p-0 text-center">
-          <a href="profile.html" class="home text-white">
-            <span class="icofont-user h5"></span>
-            <p class="mb-0 small">Account</p>
-          </a>
+      </div>
+    </div>
+
+    <div class="new-driver-form" id="new-driver-form">
+      <div
+        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+      >
+        <h5 class="font-weight-normal mb-0 text-white">
+          <a
+            class="text-danger mr-3"
+            onclick="document.getElementById('new-driver-form').style.display='none'"
+            ><i class="icofont-rounded-left"></i
+          ></a>
+          New Product
+        </h5>
+      </div>
+      <form action="shop.html" class="p-4">
+        <div class="text-center mb-3 position-relative">
+          <div class="position-absolute edit-bt">
+              <label for="upload-photo" class="mb-0"><span
+                      class="icofont-pencil-alt-5 text-white"></span></label>
+              <input type="file" name="photo" id="upload-photo" />
+          </div>
+          <img src="img/profile.jpg" class="rounded-pill">
+      </div>
+
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product Name</label>
+          <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
+          <input type="text" class="form-control" placeholder="Enter product name" />
         </div>
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product Price</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter product price"
+          />
+        </div>
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product description</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter product description"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4"
+        >
+          ADD PRODUCT
+        </button>
+      </form>
+    </div>
+
+    <div class="new-driver-form" id="edit-product-form">
+      <div
+        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+      >
+        <h5 class="font-weight-normal mb-0 text-white">
+          <a
+            class="text-danger mr-3"
+            onclick="document.getElementById('edit-product-form').style.display='none'"
+            ><i class="icofont-rounded-left"></i
+          ></a>
+          Edit Product
+        </h5>
+      </div>
+      <form action="shop.html" class="p-4">
+        <div class="text-center mb-3 position-relative">
+          <div class="position-absolute edit-bt">
+              <label for="upload-photo" class="mb-0"><span
+                      class="icofont-pencil-alt-5 text-white"></span></label>
+              <input type="file" name="photo" id="upload-photo" />
+          </div>
+          <img src="img/profile.jpg" class="rounded-pill">
+      </div>
+
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product Name</label>
+          <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
+          <input type="text" class="form-control" placeholder="Enter product name" />
+        </div>
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product Price</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter product price"
+          />
+        </div>
+        <div class="form-group">
+          <label class="text-muted f-10 mb-1">Product description</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter product description"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4"
+        >
+          ADD PRODUCT
+        </button>
+      </form>
+    </div>
+    <!-- <div class="driver-popup-page container" id="driver-popup-page">
+      <div class="row justify-content-around py-5 px-2 rounded-2">
+        <div class="col-12 text-right">
+          <div
+            class="icofont-exit h5"
+            onclick="document.getElementById('driver-popup-page').style.display='none'"
+          ></div>
+        </div>
+        <p
+          class="small mb-0 l-hght-14 col-12 text-center py-3 font-weight-bold"
+        >
+          DRIVER DETAILS
+        </p>
+        <div class="bg-white mb-2 col-12">
+          <div class="row mx-0 mb-3">
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">Driver</small>
+              <p class="small mb-0 l-hght-14">Driver's Name</p>
+            </div>
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">Phone Number</small>
+              <p class="small mb-0 l-hght-14">+254795359098</p>
+            </div>
+          </div>
+          <div class="row mx-0 mb-3">
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">No. of Trips</small>
+              <p class="small mb-0 l-hght-14">80</p>
+            </div>
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">Ratings</small>
+              <p class="small mb-0 l-hght-14">67</p>
+            </div>
+          </div>
+          <div class="row mx-0 mb-3">
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">National ID</small>
+              <p class="small mb-0 l-hght-14">41624178</p>
+            </div>
+            <div class="col-6 p-0">
+              <small class="text-muted mb-1 f-10 pr-1">Status</small>
+              <p class="small mb-0 l-hght-14">BOOKED</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="col-5 p-2 rounded-2 bg-danger text-white ring-0"
+          onclick="document.getElementById('new-driver-form').style.display='block';document.getElementById('driver-popup-page').style.display='none'"
+        >
+          Edit
+        </button>
+        <button class="col-5 p-2 rounded-2 bg-tomato text-white ring-0">
+          Delete
+        </button>
       </div>
     </div> -->
 
     <script
       src="vendor/jquery/jquery.min.js"
-      type="54a176024781dba33c3e340c-text/javascript"
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
     ></script>
     <script
       src="vendor/bootstrap/js/bootstrap.bundle.min.js"
-      type="54a176024781dba33c3e340c-text/javascript"
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
     ></script>
 
     <script
-      type="54a176024781dba33c3e340c-text/javascript"
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
       src="vendor/slick/slick.min.js"
     ></script>
 
     <script
-      type="54a176024781dba33c3e340c-text/javascript"
+      src="vendor/select-tool/dist/js/select2.min.js"
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
+    ></script>
+
+    <script
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
       src="vendor/sidebar/hc-offcanvas-nav.js"
     ></script>
 
     <script
       src="js/custom.js"
-      type="54a176024781dba33c3e340c-text/javascript"
+      type="96d284817fd6e0fdc8d5ba40-text/javascript"
     ></script>
     <script
       src="cdn/rocket-loader.min.js"
       data-cf-settings="96d284817fd6e0fdc8d5ba40-|49"
       defer
     ></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-      data-cf-beacon='{"rayId":"86ef9b4bbe6865ec","version":"2024.3.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
-      crossorigin="anonymous"
-    ></script>
   </body>
-
-  <!-- Mirrored from askbootstrap.com/mobileui/osahanbus/my-ticket.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:10 GMT -->
 </html>
