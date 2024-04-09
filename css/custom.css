@@ -36,7 +36,7 @@ small {
 }
 
 .form-control {
-    font-size: 13px;
+    font-size: 14px;
     padding: 5px 10px
 }
 
@@ -421,6 +421,12 @@ small.osahan-n {
 h1.success-icon {
     font-size: 80px !important;
     color: #5bc550
+}
+
+.osahan-header-nav, .osahan-home-header{
+    position: sticky;
+    top: 0;
+    z-index: 3000;
 }
 
 .osahan-header-nav h5 {

@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
-
+    <link rel="stylesheet" href="css/other_custom.css">
     <link href="css/custom.css" rel="stylesheet">
 
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
@@ -32,28 +32,27 @@
                 My Buses
             </h5>
             <div class="ml-auto d-flex align-items-center">
-                <a href="home.html" class="text-white h6 mb-0"><i class="icofont-search-1"></i></a>
-                <a href="#" class="mx-4 text-white h6 mb-0" data-toggle="modal" data-target="#filterModal"><i
-                        class="icofont-filter"></i></a>
+                <i class="icofont-plus-square h4 text-white m-0" onclick="document.getElementById('new-bus-form').style.display='block'"></i>
             </div>
         </div>
-        <div class="osahan-listing p-0 m-0 row border-top">
+
+        <div class="osahan-listing p-0 m-0 row border-top row justify-content-center">
             <div class="p-2 border-bottom w-100">
                 <div class="bg-white border border-warning rounded-1 shadow-sm p-2">
                     <div class="row mx-0 px-1">
                         <div class="col-6 p-0">
-                            <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
-                            <p class="small mb-0"> LUDHIANA</p>
+                            <small class="text-muted mb-1 f-10 pr-1">BOOKED</small>
+                            <p class="small mb-0">10 Buses</p>
                         </div>
                         <div class="col-6 p-0">
-                            <small class="text-muted mb-1 f-10 pr-1">GOING TO</small>
-                            <p class="small mb-0"> GOA</p>
+                            <small class="text-muted mb-1 f-10 pr-1">UNOCCUPIED</small>
+                            <p class="small mb-0">23 Buses</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <a href="bus-details.html" class="text-dark col-6 px-0">
+            <a href="bus-details.html" class="text-dark col-11 px-0 mt-2">
                 <div class="list_item_gird m-0 bg-white shadow-sm listing-item border-bottom border-right">
                     <div class="px-3 pt-3 tic-div">
                         <div class="list-item-img">
@@ -61,35 +60,66 @@
                         </div>
                         <p class="mb-0 l-hght-10">Nissan Model RX</p>
                         <span class="text-danger small">KAJ 906 J</span>
-                        <div class="start-rating small">
-                            <i class="icofont-star text-danger"></i>
-                            <i class="icofont-star text-danger"></i>
-                            <i class="icofont-star text-danger"></i>
-                            <i class="icofont-star text-danger"></i>
-                            <i class="icofont-star text-muted"></i>
-                            <span class="text-dark">4.0</span>
-                        </div>
                     </div>
-                    <div class="p-3 d-flex">
-                        <div class="bus_details w-100">
-                            <div class="d-flex">
-                                <p><i class="icofont-wind mr-2 text-danger"></i><span class="small">AC</span></p>
-                                <p class="small ml-auto"><i class="icofont-bus mr-2 text-danger"></i>2/1</p>
+                    <div class="p-3 d-flex justify-content-center">
+                        <div class="bus_details w-100 row justify-content-around">
+                            <div class="d-flex col-12">
+                                <p><i class="icofont-chair mr-2 text-danger"></i><span class="small">80</span></p>
+                                <p class="small ml-auto"><i class="icofont-color-bucket mr-2 text-danger"></i>Gray</p>
                             </div>
-                            <div class="d-flex l-hght-10">
-                                <span class="icofont-clock-time small mr-2 text-danger"></span>
+                            <div class="d-flex l-hght-10 col-12">
+                                <span class="icofont-bus-alt-1 small mr-2 text-danger"></span>
                                 <div>
-                                    <small class="text-muted mb-2 d-block">Journey Start</small>
-                                    <p class="small">05May, 12:00am</p>
+                                    <small class="text-muted mb-2 d-block">No. of Trips</small>
+                                    <p class="small">79</p>
                                 </div>
+                                
                             </div>
-                            <div class="d-flex l-hght-10">
+                            <div class="d-flex l-hght-10 col-12">
                                 <span class="icofont-google-map small mr-2 text-danger"></span>
                                 <div>
-                                    <small class="text-muted mb-2 d-block">From - To</small>
-                                    <p class="small mb-1">Dhaka to Bogura</p>
+                                    <small class="text-muted mb-2 d-block">Status</small>
+                                    <p class="small mb-1">BOOKED</p>
                                 </div>
                             </div>
+                            <button class="col-5 p-2 rounded-2 bg-danger text-white ring-0 mt-2">Edit</button>
+                            <button class="col-5 p-2 rounded-2 bg-tomato text-white ring-0 mt-2">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="bus-details.html" class="text-dark col-11 px-0 mt-4">
+                <div class="list_item_gird m-0 bg-white shadow-sm listing-item border-bottom border-right">
+                    <div class="px-3 pt-3 tic-div">
+                        <div class="list-item-img">
+                            <img src="img/listing/item1.png" class="img-fluid">
+                        </div>
+                        <p class="mb-0 l-hght-10">Nissan Model RX</p>
+                        <span class="text-danger small">KAJ 906 J</span>
+                    </div>
+                    <div class="p-3 d-flex justify-content-center">
+                        <div class="bus_details w-100 row justify-content-around">
+                            <div class="d-flex col-12">
+                                <p><i class="icofont-chair mr-2 text-danger"></i><span class="small">80</span></p>
+                                <p class="small ml-auto"><i class="icofont-color-bucket mr-2 text-danger"></i>Gray</p>
+                            </div>
+                            <div class="d-flex l-hght-10 col-12">
+                                <span class="icofont-bus-alt-1 small mr-2 text-danger"></span>
+                                <div>
+                                    <small class="text-muted mb-2 d-block">No. of Trips</small>
+                                    <p class="small">79</p>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex l-hght-10 col-12">
+                                <span class="icofont-google-map small mr-2 text-danger"></span>
+                                <div>
+                                    <small class="text-muted mb-2 d-block">Status</small>
+                                    <p class="small mb-1">BOOKED</p>
+                                </div>
+                            </div>
+                            <button class="col-5 p-2 rounded-2 bg-danger text-white ring-0 mt-2">Edit</button>
+                            <button class="col-5 p-2 rounded-2 bg-tomato text-white ring-0 mt-2">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -178,6 +208,43 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <div class="new-driver-form" id="new-bus-form">
+        <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
+            <h5 class="font-weight-normal mb-0 text-white">
+                <a class="text-danger mr-3" onclick="document.getElementById('new-bus-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
+                New Passanger Bus
+            </h5>
+        </div>
+        <form action="verification.html" class="p-4">
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">License Plate</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
+                <input type="text" class="form-control" placeholder="Enter plate No.">
+            </div>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Number of Seats</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
+                <input type="text" class="form-control" placeholder="Enter No. of Seats">
+            </div>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Model</label>
+                <input type="number" class="form-control" placeholder="Enter Model Type">
+            </div>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Colour</label>
+                <input type="number" class="form-control" placeholder="Enter bus colour">
+            </div>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Seat Configuration</label>
+                <input type="text" class="form-control" placeholder="e.g 4 x Rows = No. Seats">
+            </div>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER BUS</button>
+            <p class="text-muted text-center small">
+                Please Register QC Paases Buses for passanger saftey
+            </p>
+        </form>
     </div>
 
     <script src="vendor/jquery/jquery.min.js" type="f9605c0ce10ba968bb026c56-text/javascript"></script>

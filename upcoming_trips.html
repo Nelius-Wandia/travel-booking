@@ -24,7 +24,7 @@
     <div class="osahan-verification padding-bt">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
-                <a class="text-danger mr-3" href="payment.html"><i class="icofont-rounded-left"></i></a>
+                <a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
                 Upcoming Trips
             </h5>
             <div class="ml-auto d-flex align-items-center">
@@ -64,24 +64,25 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr onclick="alert('testing row click')">
+                                                    <tr onclick="location.href='bus-details.html'">
                                                         <td>KCQ123T</td>
                                                         <td>98</td>
                                                         <td>1,500</td>
                                                         <td>Round Trip</td>
                                                     </tr>
-                                                    <tr onclick="alert('testing row click')">
+                                                    <tr onclick="location.href='bus-details.html'">
                                                         <td>KCQ123T</td>
                                                         <td>98</td>
                                                         <td>1,500</td>
                                                         <td>Round Trip</td>
                                                     </tr>
-                                                    <tr onclick="alert('testing row click')">
+                                                    <tr onclick="location.href='bus-details.html'">
                                                         <td>KCQ123T</td>
                                                         <td>98</td>
                                                         <td>1,500</td>
                                                         <td>Round Trip</td>
                                                     </tr>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -123,41 +124,52 @@
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
                 <a class="text-danger mr-3" onclick="document.getElementById('new-bus-form').style.display='none'"><i class="icofont-rounded-left"></i></a>
-                New Passanger Bus
+                New Trip
             </h5>
         </div>
         <form action="verification.html" class="p-4">
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">License Plate</label>
-                <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter plate No.">
+                <label class="text-muted f-10 mb-1">Driver ID</label>
+                <select name="" id="" class="form-control">
+                    <option value="">James Kamau</option>
+                    <option value="">Brian Omondi</option>
+                    <option value="">Joy Njeri</option>
+                </select>
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Number of Seats</label>
-                <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter No. of Seats">
+                <label class="text-muted f-10 mb-1">Bus ID</label>
+                <select name="" id="" class="form-control">
+                    <option value="">KAJ 906 K</option>
+                    <option value="">KAJ 906 K</option>
+                    <option value="">KAJ 906 K</option>
+                </select>
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Model</label>
-                <input type="number" class="form-control" placeholder="Enter Model Type">
+                <label class="text-muted f-10 mb-1">Origin Address</label>
+                <div class="form-control">
+                    <i class="icofont-location-pin"></i>
+                </div>
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Colour</label>
-                <input type="number" class="form-control" placeholder="Enter bus colour">
+                <label class="text-muted f-10 mb-1">Destination Address</label>
+                <div class="form-control">
+                    <i class="icofont-location-pin"></i>
+                </div>
             </div>
             <div class="form-group">
-                <label class="text-muted f-10 mb-1">Seat Configuration</label>
-                <input type="text" class="form-control" placeholder="e.g 4 x Rows = No. Seats">
+                <label class="text-muted f-10 mb-1">Origin DateTime</label>
+                <input type="datetime-local" class="form-control" placeholder="Enter Model Type">
             </div>
-            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER BUS</button>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Destination DateTime</label>
+                <input type="datetime-local" class="form-control" placeholder="Enter bus colour">
+            </div>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER TRIP</button>
             <p class="text-muted text-center small">
-                Please Register QC Paases Buses for passanger saftey
+                Trip will be automatically added to database
             </p>
         </form>
     </div>
-
-    <script src="vendor/jquery/jquery.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
 
     <script type="96d284817fd6e0fdc8d5ba40-text/javascript" src="vendor/slick/slick.min.js"></script>
 
@@ -167,18 +179,5 @@
 
     <script src="js/custom.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
     <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon='{"rayId":"86ef9b2afb3565e9","version":"2024.3.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
-        crossorigin="anonymous"></script>
-        <!-- <script>
-            setInterval(() => {
-                location.reload()
-            }, 4000)
-        </script> -->
 </body>
-
-<!-- Mirrored from askbootstrap.com/mobileui/osahanbus/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:32:58 GMT -->
-
 </html>
