@@ -7,7 +7,8 @@ class AdminUser:
     pass
 
 
-# Cols - (id, company_name, phone, email, means_type, till_number, bank_acc, crypto_addr, verification, revenue, total_trips, logo_url, updated_time, created_time)
+# Cols - (id, company_name, phone, email, means_type, till_number, bank_acc, crypto_addr, verification,
+# revenue, total_trips, logo_url, updated_time, created_time)
 
 # FUNCTIONS
 # Rules(Each function takes its own parameters)
