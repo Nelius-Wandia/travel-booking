@@ -39,21 +39,23 @@
   </head>
 
   <body class="bg-light">
-    <div class="my-ticket padding-bt">
-      <div
-        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
-      >
+    <div class="my-shop padding-bt">
+      <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
         <h5 class="font-weight-normal mb-0 text-white">
-          <a class="text-danger mr-3" href="home.html"
-            ><i class="icofont-rounded-left"
-            ></i
-          ></a>
-          <i class="icofont-plus-square"></i>
-          Products
+            <a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
+            Products
         </h5>
-      </div>
+        <div class="ml-auto d-flex align-items-center">
+            <a  
+            href="shop.html#add-product-popup"
+             class="h4 m-0 text-white ml-auto"
+               >
+                <i class="icofont-plus-square"></i>
+            </a>
+        </div>
+    </div>
 
-      <div class="row main-products" style="width: 100%">
+      <div class="row main-products" id="main-products" style="width: 100%">
         <div class="col-6 bootstrap snippets bootdeys">
           <!-- product -->
           <div class="product-content product-wrap clearfix">
@@ -89,8 +91,7 @@
                         class="btn btn-danger"
                         style="font-size: small; font-weight: bold"
                         onclick="document.getElementById('product-popup').style.display='block'"
-                        >EDIT</a
-                      >
+                        >EDIT</a>
                     </div>
                   </div>
                 </div>
@@ -233,16 +234,15 @@
         </div>
       </div>
     </div>
-
+<!-- ######################## EDIT PRODUCT FORM ################################### -->
     <div id="product-popup" class="product-edit-popup">
         <div
-        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
-      >
+        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
         <h5 class="font-weight-normal mb-0 text-white">
-          <a class="text-danger mr-3" href="shop.html"
-            ><i class="icofont-rounded-left"></i
-          ></a>
-          Products
+          <a class="text-danger mr-3" href="#main-products"
+          >
+          <i class="icofont-rounded-left" ></i></a>
+          Edit Product
         </h5>
       </div>
       <div class="popup-form row justify-content-center">
@@ -288,12 +288,76 @@
             type="submit"
             class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1 add-product"
             style="font-size: x-small; font-weight: bold"
+            onclick="document.getElementById('product-popup').style.display='none'"
           >
             Done
           </button>
         </form>
       </div>
     </div>
+<!-- ######################## ADD PRODUCT FORM ################################### -->
+
+<div id="add-product-popup" class="add-product-popup">
+  <div
+  class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+>
+  <h5 class="font-weight-normal mb-0 text-white">
+    <a class="text-danger mr-3" href="#"
+      ><i class="icofont-rounded-left"></i
+    ></a>
+    Add Product
+  </h5>
+</div>
+<div class="popup-form row justify-content-center">
+  <form action="#" class="productform" class="col-12">
+    <div class="text-center mb-3 position-relative">
+      <div class="position-absolute edit-bt">
+        <label for="upload-photo" class="mb-0"
+          ><span class="icofont-pencil-alt-5 text-white"></span
+        ></label>
+        <input type="file" name="photo" id="upload-photo" />
+      </div>
+      <img src="img/profile.jpg" class="rounded-pill" />
+    </div>
+    <!-- <div class="form-group">
+              <label class="product-image" style="font-size: xx-small; color: rgb(152, 151, 151);">Product Image</label>
+              <input type="file" accept="image/*">
+           </div> -->
+    <div class="form-group">
+      <label class="text-muted f-10 mb-1">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter product name"
+      />
+    </div>
+    <div class="form-group">
+      <label class="text-muted f-10 mb-1">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter product price"
+      />
+    </div>
+    <div class="form-group">
+      <label class="text-muted f-10 mb-1">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter product description"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1 add-product"
+      style="font-size: x-small; font-weight: bold"
+    >
+      Add Product
+    </button>
+  </form>
+</div>
+</div>    
+
 
     <!-- <div class="fixed-bottom p-3">
       <div class="footer-menu row m-0 bg-danger shadow rounded-2">
