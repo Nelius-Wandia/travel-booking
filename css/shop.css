@@ -1,3 +1,4 @@
+
 .product-content {
     border: 2px solid #dfe5e9;
     margin-bottom: 20px;
@@ -307,4 +308,38 @@
     .product-content .product-info {
         position: relative
     }
+}
+.add-product{
+    width: 37%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="image"] {
+    width: 150px;
+    height: auto; 
+    border: none; 
+    cursor: pointer; 
+}
+.productform{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+
+
+
+
+.product-edit-popup{
+    display: none;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 }

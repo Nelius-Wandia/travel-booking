@@ -31,6 +31,11 @@
     <link href="css/custom.css" rel="stylesheet" />
 
     <link href="vendor/sidebar/demo.css" rel="stylesheet" />
+    <!-- <style>
+        body{
+            overflow: hidden;
+        }
+    </style> -->
   </head>
 
   <body class="bg-light">
@@ -40,13 +45,15 @@
       >
         <h5 class="font-weight-normal mb-0 text-white">
           <a class="text-danger mr-3" href="home.html"
-            ><i class="icofont-rounded-left"></i
+            ><i class="icofont-rounded-left"
+            ></i
           ></a>
-          Your Bookings
+          <i class="icofont-plus-square"></i>
+          Products
         </h5>
       </div>
 
-      <div class="row" style="width: 100%;">
+      <div class="row main-products" style="width: 100%">
         <div class="col-6 bootstrap snippets bootdeys">
           <!-- product -->
           <div class="product-content product-wrap clearfix">
@@ -67,7 +74,7 @@
                     <a href="#"> Minute Maid <span>Mango 500ml</span> </a>
                   </h5>
                   <p class="price-container">
-                    <span style="color: #2c2c54;">KES 99</span>
+                    <span style="color: #2c2c54">KES 99</span>
                   </p>
                   <span class="tag1"></span>
                 </div>
@@ -78,9 +85,10 @@
                   <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6">
                       <a
-                        href="javascript:void(0);"
+                        href="#product-popup"
                         class="btn btn-danger"
                         style="font-size: small; font-weight: bold"
+                        onclick="document.getElementById('product-popup').style.display='block'"
                         >EDIT</a
                       >
                     </div>
@@ -226,7 +234,68 @@
       </div>
     </div>
 
-    <div class="fixed-bottom p-3">
+    <div id="product-popup" class="product-edit-popup">
+        <div
+        class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger"
+      >
+        <h5 class="font-weight-normal mb-0 text-white">
+          <a class="text-danger mr-3" href="shop.html"
+            ><i class="icofont-rounded-left"></i
+          ></a>
+          Products
+        </h5>
+      </div>
+      <div class="popup-form row justify-content-center">
+        <form action="#" class="productform" class="col-12">
+          <div class="text-center mb-3 position-relative">
+            <div class="position-absolute edit-bt">
+              <label for="upload-photo" class="mb-0"
+                ><span class="icofont-pencil-alt-5 text-white"></span
+              ></label>
+              <input type="file" name="photo" id="upload-photo" />
+            </div>
+            <img src="img/profile.jpg" class="rounded-pill" />
+          </div>
+          <!-- <div class="form-group">
+                    <label class="product-image" style="font-size: xx-small; color: rgb(152, 151, 151);">Product Image</label>
+                    <input type="file" accept="image/*">
+                 </div> -->
+          <div class="form-group">
+            <label class="text-muted f-10 mb-1">Product Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter product name"
+            />
+          </div>
+          <div class="form-group">
+            <label class="text-muted f-10 mb-1">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Enter product price"
+            />
+          </div>
+          <div class="form-group">
+            <label class="text-muted f-10 mb-1">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter product description"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1 add-product"
+            style="font-size: x-small; font-weight: bold"
+          >
+            Done
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="fixed-bottom p-3">
       <div class="footer-menu row m-0 bg-danger shadow rounded-2">
         <div class="col-3 p-0 text-center">
           <a href="home.html" class="home text-white">
@@ -254,7 +323,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script
       src="vendor/jquery/jquery.min.js"
