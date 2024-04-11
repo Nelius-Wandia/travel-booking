@@ -11,16 +11,16 @@
     <p id="display"></p>
     <button onclick="FetchData()">Click</button>
     <script>
-        // alert("Hello Andrew")
         function FetchData(){
             var options = {
                 method: "POST",
+                credentials: 'include',
                 headers:{
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "email": "cwuiuec",
-                    "password": "cwkeicuewc"
+                    "email": "machariaandrew1428@gmail.com",
+                    "password": "1234"
                 })
             }
             fetch("http://127.0.0.1:5000/login", options)
