@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON TEST</title>
+</head>
+
+<body>
+    <p id="display"></p>
+    <button onclick="FetchData()">Click</button>
+    <script>
+        // alert("Hello Andrew")
+        function FetchData(){
+            var options = {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": "cwuiuec",
+                    "password": "cwkeicuewc"
+                })
+            }
+            fetch("http://127.0.0.1:5000/login", options)
+            .then(x=>x.json())
+            .then(x=>{
+                console.log(x)
+            })
+        }
+    </script>
+</body>
+
+</html>
