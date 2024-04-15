@@ -8,20 +8,8 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
 app.config["access_tokens"] = []
-app.config["Login_attempts"] = []
-blocked_ips = []
-unit_login = {
-    "ip_addr": "",
-    "attempts": 0
-}
 generals = Generals()
 
-def Blocked_ip(func):
-    def wrapper(*args, **kwargs):
-        if request.remote_addr in blocked_ips:
-            abort(403)
-        return func(*args, **kwargs)
-    return wrapper
 
 @app.route("/signup", methods=['GET', 'POST'])
 def Register():
@@ -82,9 +70,7 @@ def Register():
     response.set_cookie("auth_token", access_token)
     return response
 
-
 @app.route('/signin', methods=['GET', 'POST'])
-@Blocked_ip
 def Login():
     if not request.get_json(): return False
     email = request.get_json()['email']
@@ -94,30 +80,6 @@ def Login():
     user = AdminUser()
     if not user.AuthenticateUser(email, password):
         print("Failed Authentication")
-        for x in app.config["Login_attempts"]:
-            if x["ip_addr"] == ip_address:
-                attempts_no = x["attempts"]+1
-                unit_login = {
-                    "ip_addr": ip_address,
-                    "attempts": attempts_no,
-                }
-                app.config["Login_attempts"].remove(x)
-                app.config["Login_attempts"].append(unit_login)
-                print(app.config["Login_attempts"])
-                if attempts_no > 5:
-                    blocked_ips.append(ip_address)
-                    # Notify User of Blocking for 5 attempts
-                return jsonify({
-                    "state": False,
-                    "message": "Authentication Failed",
-                    "data": None
-                })
-        unit_login = {
-            "ip_addr": ip_address,
-            "attempts": 1,
-        }
-        app.config["Login_attempts"].append(unit_login)
-        print(app.config["Login_attempts"])
         return jsonify({
             "state": False,
             "message": "Authentication Failed",
