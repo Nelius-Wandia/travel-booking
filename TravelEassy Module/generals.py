@@ -27,3 +27,19 @@ class Generals:
     def GetCurrentTime(self):
         return datetime.datetime.now()
     
+    def TokenAuthentication(self, user_token, all_tokens):
+        for x in all_tokens:
+            if x["token"] == user_token:
+                pass
+
+    def GenAccessToken(self, all_tokens:list):
+        while True:
+            access_token = self.GenRandomCode(size=30)
+            state = True
+            for x in all_tokens:
+                if x["token"] == access_token:
+                    state = False
+                    break
+            if state == True:
+                return access_token   
+    

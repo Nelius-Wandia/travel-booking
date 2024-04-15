@@ -19,7 +19,7 @@ class AdminUser:
                 till_number integer,
                 bank_account integer,
                 crypto_address varchar(50),
-                verification varchar(10),
+                verification varchar(100),
                 revenue integer,
                 total_trips integer,
                 logo_url varchar(50),
@@ -43,10 +43,13 @@ class AdminUser:
         }
         verification = json.dumps(verification)
         sql_query = """
-            insert into admin_users (id, company_name, phone, email, means_type, password, till_number, bank_account, crypto_address, verification, revenue, total_trips, logo_url, updated_time, created_time)
-            values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            insert into admin_users (id, company_name, phone, email, means_type, password, till_number, bank_account, crypto_address, verification, revenue, total_trips, logo_url)
+            values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             """
-        sql_data = (generals.GenRandomCode(size=5), metadata["company_name"], metadata["phone"], metadata["email"], metadata["means_type"], generals.GetPasswordHash(metadata["password"]), metadata["till_number"], metadata["bank_account"], metadata["crypto_address"], verification, 0, 0, self.SaveLogo(metadata["logo"]), generals.GetCurrentTime(), generals.GetCurrentTime())
+        self.user_id = generals.GenRandomCode(size=10)
+        metadata["bank_account"] = metadata["bank_account"] if len(metadata["bank_account"]) > 5 else None
+        metadata["crypto_address"] = metadata["crypto_address"] if len(metadata["crypto_address"]) > 5 else None
+        sql_data = (self.user_id, metadata["company_name"], metadata["phone"], metadata["email"], metadata["means_type"], generals.GetPasswordHash(metadata["password"]), metadata["till_number"], metadata["bank_account"], metadata["crypto_address"], verification, 0, 0, self.SaveLogo(metadata["logo"]))
         db.cursor.execute(sql_query, sql_data)
         db.conn.commit()
         print(sql_data)
@@ -59,6 +62,15 @@ class AdminUser:
         if not response: return False
         return True
 
+    def is_valid(self):
+        sql_query = """select verification from admin_users where id = %s"""
+        db.cursor.execute(sql_query, [self.user_id])
+        response = db.cursor.fetchall()
+        if not response: return False
+        verification = response[0][0]
+        state = json.loads(verification)["state"]
+        return state
+
     def SaveLogo(self, img_file):
         # Returns the file name
         # Use 16 Character unique identifier
@@ -70,7 +82,6 @@ class AdminUser:
         response = db.cursor.fetchall()
         if not response: return False
         user_password = response[0][0]
-        print(user_password)
         if not generals.VerifyHash(user_password, password): return False
         self.user_id = response[0][1]
         return True
@@ -86,34 +97,74 @@ class AdminUser:
             "state": state
         }
         ver_data = json.dumps(ver_data)
-        print(ver_data)
         sql_query = """update admin_users set verification = %s where id = %s"""
-        print(self.user_id)
         db.cursor.execute(sql_query, (ver_data,self.user_id,))
         db.conn.commit()
         return True
     
+    def UpdateProfile(self, metadata):
+        # Update fields - (logo, name, phone, email, till, bank, crypto)
+        metadata = {
+            "company_name": "ionextech",
+            "phone": 254795359098,
+            "email": "machariaandrew1428@gmail.com",
+            "till_number": "1234",
+            "bank_account": "1234",
+            "crypto_address": "1234",
+            "logo": "logo"
+        }
+        metadata["bank_account"] = metadata["bank_account"] if len(metadata["bank_account"]) > 5 else None
+        metadata["crypto_address"] = metadata["crypto_address"] if len(metadata["crypto_address"]) > 5 else None
+        sql_query = """update admin_users set company_name = %s, phone = %s, email = %s, till_number = %s, bank_account = %s, crypto_address = %s, logo = %s where id = %s"""
+        sql_data = [metadata["company_name"], metadata["phone"], metadata["email"], metadata["till_number"], metadata["bank_account"], metadata["crypto_address"], "logo.png", self.user_id]
+        db.cursor.execute(sql_query, sql_data)
+        db.conn.commit()
+        return True
+        
+    def NotifyUser(self):
+        pass
 
+    def VerifyCode(self, user_code):
+        sql_query = """select verification from admin_users where id = %s"""
+        db.cursor.execute(sql_query, [self.user_id])
+        response = db.cursor.fetchall()
+        if not response: return False
+        response = response[0][0]
+        verification_code = json.loads(response)["code"]
+        if verification_code == user_code:
+            self.SetUserState(True)
+            return True
+        return False
+
+    def DeleteUserAccount(self):
+        pass
+
+# user = AdminUser()
+# user.FetchData()
+# user.CreateUserTable()
 # Models Testing Code #
-metadata = {
-    "company_name": "ionextech",
-    "phone": 254795359098,
-    "email": "machariaandrew1428@gmail.com",
-    "means_type": "Roadways",
-    "password": "1234",
-    "till_number": "1234",
-    "bank_account": "1234",
-    "crypto_address": "1234",
-    "logo": "logo"
-}
-user = AdminUser()
+# metadata = {
+#     "company_name": "ionextech",
+#     "phone": 254795359098,
+#     "email": "machariaandrew1428@gmail.com",
+#     "means_type": "Roadways",
+#     "password": "1234",
+#     "till_number": "1234",
+#     "bank_account": "1234",
+#     "crypto_address": "1234",
+#     "logo": "logo"
+# }
+user = AdminUser(user_id="x7p@9OYV@f")
+# print(user.VerifyCode("am(mz"))
+user.SetUserState(True)
+# print(user.is_valid())
 # print(user.CreateUser(metadata))
 # user.CreateUserTable()
 # print(user.GetAdminTable())
 # print(user.AuthenticateUser("machariaandrew1428@gmail.com", "1234"))
 # print(user.SetUserState(False))
 # End of Model Testing #
-data = "$5$rounds=535000$E5oJteHbk6XKPoyW$BB/lMqFgkTF9lwk0LoD0OFFk3j5SUjUkdynePs6Exq2"
+# data = "$5$rounds=535000$E5oJteHbk6XKPoyW$BB/lMqFgkTF9lwk0LoD0OFFk3j5SUjUkdynePs6Exq2"
 
 # Cols - (id, company_name, phone, email, means_type, till_number, bank_acc, crypto_addr, verification(json), revenue, total_trips, logo_url, updated_time, created_time)
 
