@@ -177,9 +177,9 @@ user = AdminUser(user_id="x7p@9OYV@f")
 #     "crypto_address": "1234",
 #     "logo": "logo"
 # }
-user = AdminUser(user_id="x7p@9OYV@f")
+user = AdminUser(user_id="PFCy)kTsAm")
 # print(user.VerifyCode("am(mz"))
-user.SetUserState(True)
+# user.SetUserState(True)
 # print(user.is_valid())
 # print(user.CreateUser(metadata))
 # user.CreateUserTable()
