@@ -155,7 +155,6 @@ def AddBus(args):
         colour = request_data["colour"]
         seat_config = request_data["seat_config"]
 
-        bus = Buses()
         metadata = {
             "company_id": user_id,
             "license_plate": license,
@@ -164,6 +163,7 @@ def AddBus(args):
             "color": colour,
             "arrangement": seat_config
         }
+        bus = Buses()
         bus.AddBus(metadata)
 
     elif args == "update":
