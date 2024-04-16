@@ -23,7 +23,7 @@
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="new Buses(event).RenderJSONtoDOM(document.getElementById('all_buses_display'))">
 
     <div class="osahan-listing">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
@@ -32,11 +32,11 @@
                 My Buses
             </h5>
             <div class="ml-auto d-flex align-items-center">
-                <i class="icofont-plus-square h4 text-white m-0" onclick="document.getElementById('new-bus-form').style.display='block'"></i>
+                <i class="icofont-plus-square h4 text-white m-0" onclick="document.getElementById('new-bus-form').style.display='block';bus_url='add'"></i>
             </div>
         </div>
 
-        <div class="osahan-listing p-0 m-0 row border-top row justify-content-center">
+        <div class="osahan-listing p-0 m-0 row border-top row justify-content-center" id="all_buses_display">
             <div class="p-2 border-bottom w-100">
                 <div class="bg-white border border-warning rounded-1 shadow-sm p-2">
                     <div class="row mx-0 px-1">
@@ -88,6 +88,7 @@
                     </div>
                 </div>
             </a>
+
             <a href="bus-details.html" class="text-dark col-11 px-0 mt-4">
                 <div class="list_item_gird m-0 bg-white shadow-sm listing-item border-bottom border-right">
                     <div class="px-3 pt-3 tic-div">
@@ -217,41 +218,37 @@
                 New Bus
             </h5>
         </div>
-        <form action="verification.html" class="p-4">
+        <!-- <form action="verification.html" class="p-4"> -->
+        <form onsubmit="new Buses(event).AddBus(this)" class="p-4" name="bus_form">
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">License Plate</label>
                 <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter plate No." name="licesnse_plate">
+                <input type="text" class="form-control" placeholder="Enter plate No." name="licesnse_plate" min="7">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Number of Seats</label>
                 <!-- <input type="text" class="form-control" placeholder="Enter Phone Number" required> -->
-                <input type="text" class="form-control" placeholder="Enter No. of Seats" name="no_seats">
+                <input type="number" class="form-control" placeholder="Enter No. of Seats" name="no_seats">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Model</label>
-                <input type="number" class="form-control" placeholder="Enter Model Type" name="model">
+                <input type="text" class="form-control" placeholder="Enter Model Type" name="model">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Colour</label>
-                <input type="number" class="form-control" placeholder="Enter bus colour" name="colour">
+                <input type="text" class="form-control" placeholder="Enter bus colour" name="colour">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Seat Configuration</label>
                 <input type="text" class="form-control" placeholder="e.g 4 x Rows = No. Seats" name="seat_config">
             </div>
-            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER BUS</button>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">DONE</button>
             <p class="text-muted text-center small">
                 Please Register QC Paases Buses for passanger saftey
             </p>
         </form>
     </div>
 
-    <script src="vendor/jquery/jquery.min.js" type="f9605c0ce10ba968bb026c56-text/javascript"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="f9605c0ce10ba968bb026c56-text/javascript"></script>
-
-    <script type="f9605c0ce10ba968bb026c56-text/javascript" src="vendor/slick/slick.min.js"></script>
-
-    <script type="f9605c0ce10ba968bb026c56-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
-</body>
+    <script src="TestJS/main.js"></script>
+    </body>
 </html>

@@ -1,7 +1,6 @@
 import random
 import datetime
 from passlib.hash import sha256_crypt
-import json
 
 class Generals:
     def __init__(self):
@@ -43,3 +42,5 @@ class Generals:
             if state == True:
                 return access_token   
     
+    def SterilizeJSON(self):
+        pass

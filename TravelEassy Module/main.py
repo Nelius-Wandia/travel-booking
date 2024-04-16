@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, make_response, request, abort
 from flask_cors import CORS
 from admin_users import AdminUser
+from buses import Buses
 from notifications import SMS, Email
 from generals import Generals
 
@@ -9,6 +10,19 @@ CORS(app, supports_credentials=True)
 
 app.config["access_tokens"] = []
 generals = Generals()
+
+def ValidateToken(cookie_data):
+    if not cookie_data: return False
+    auth_token = cookie_data.get('auth_token')
+    user_id = False
+    for token in app.config["access_tokens"]:
+       if token["token"] == auth_token: 
+           user_id = token["user_id"]
+    
+    if not user_id: return False
+    user = AdminUser(user_id=user_id)
+    if not user.is_valid(): return False
+    return user_id
 
 
 @app.route("/signup", methods=['GET', 'POST'])
@@ -104,15 +118,85 @@ def Login():
         "user_id": user.user_id
     }
     app.config["access_tokens"].append(unit_token)
+
+    # Fetch User data 
+    user_profile = user.FetchUserProfile()
+    user_buses = Buses().GetAllBuses(user_id=user.user_id)
     response = jsonify({
         "state": True,
         "message": "Account login Successful",
-        "data": "Enter json data here ....."
+        "data": {
+            "account_profile": user_profile,
+            "buses": user_buses,
+            "drivers": "Not set"
+        }
     })
     response = make_response(response)
     response.set_cookie("auth_token", access_token)
     print(app.config["access_tokens"])
     return response
 
+@app.route("/bus/<string:args>", methods=['GET', 'POST'])
+def AddBus(args):
+    user_id = ValidateToken(request.cookies)
+    print(user_id)
+    if not user_id:
+        return jsonify({
+            "state": False,
+            "message": "AuthToken Error",
+            "data": None
+        })
+    
+    if args == "add":
+        request_data = request.get_json()
+        license = request_data["licesnse_plate"]
+        no_seats = request_data["no_seats"]
+        model = request_data["model"]
+        colour = request_data["colour"]
+        seat_config = request_data["seat_config"]
+
+        bus = Buses()
+        metadata = {
+            "company_id": user_id,
+            "license_plate": license,
+            "no_seats": no_seats,
+            "model": model,
+            "color": colour,
+            "arrangement": seat_config
+        }
+        bus.AddBus(metadata)
+
+    elif args == "update":
+        request_data = request.get_json()
+        license = request_data["licesnse_plate"]
+        no_seats = request_data["no_seats"]
+        model = request_data["model"]
+        colour = request_data["colour"]
+        seat_config = request_data["seat_config"]
+
+        bus = Buses()
+        metadata = {
+            "company_id": user_id,
+            "license_plate": license,
+            "no_seats": no_seats,
+            "model": model,
+            "color": colour,
+            "arrangement": seat_config
+        }
+        bus.UpdateBus(metadata)
+
+    elif args == "delete":
+        bus_id = request.get_json()["bus_id"]
+        bus = Buses(bus_id=bus_id)
+        bus.DeleteBus()
+
+    # Get all Buses
+    user_buses = bus.GetAllBuses(user_id=user_id)
+    return jsonify({
+        "state": True,
+        "message": "Bus added Successfully",
+        "data": user_buses
+    })
+    
 if __name__ == '__main__':
     app.run(debug=True)

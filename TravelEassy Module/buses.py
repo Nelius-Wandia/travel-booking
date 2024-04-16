@@ -26,20 +26,16 @@ class Buses:
         db.conn.commit()
 
     def AddBus(self, metadata):
-        metadata = {
-            "company_id": "x7p@9OYV@f",
-            "license_plate": "KCQ 057P",
-            "no_seats": 89,
-            "model": "Nissan",
-            "color": "Red",
-            "arrangement": "4 X 32",
-        }
         bus_id = generals.GenRandomCode(size=5)
         sql_query = """insert into buses (id, company_id, license_plate, no_seats, model, color, arrangement, no_trips, status) values(%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
         sql_data = [bus_id, metadata["company_id"], metadata["license_plate"], metadata["no_seats"], metadata["model"], metadata["color"], metadata["arrangement"], 0, False]
 
         db.cursor.execute(sql_query, sql_data)
         db.conn.commit()
+
+    def UpdateBus(self, metadata):
+        sql_query = """update buses set """
+        sel_data = []
 
     def DeleteBus(self):
         sql_query = """delete from buses where id = %s"""
