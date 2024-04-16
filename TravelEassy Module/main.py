@@ -3,6 +3,7 @@ from flask_cors import CORS
 from admin_users import AdminUser
 # from notifications import SMS, Email
 from generals import Generals
+from buses import Buses
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
