@@ -19,16 +19,43 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "email": "machariaandrew1428@gmail.com",
+                    "email": "andrew1428@gmail.com",
                     "password": "1234"
                 })
             }
-            fetch("http://127.0.0.1:5000/login", options)
+            fetch("http://127.0.0.1:5000/signin", options)
             .then(x=>x.json())
             .then(x=>{
                 console.log(x)
             })
         }
+
+        function SignUp() {
+            var options = {
+                method: "POST",
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "company_name": "TravelEazzy",
+                    "phone": 25479535934,
+                    "email": "andrew1428@gmail.com",
+                    "means_type": "Road Ways",
+                    "password": "1234",
+                    "till_number": 1234,
+                    "bank_account": 1234,
+                    "crypto_wallet": "1234",
+                    "logo": "logo.png"
+                })
+            }
+            fetch("http://127.0.0.1:5000/signup", options)
+                .then(x => x.json())
+                .then(x => {
+                    console.log(x)
+                })
+        }
+    
     </script>
 </body>
 
