@@ -144,7 +144,6 @@ class Buses {
             "seat_config": seat_config
         }
 
-        alert(bus_url)
         fetch(`${this.url}/bus/${this.bus_url}`, this.PrepFetch(data))
         .then(x => x.json())
         .then(y => {
