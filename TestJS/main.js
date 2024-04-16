@@ -40,15 +40,16 @@ class User {
 
         console.log(this.PrepFetch(data))
         fetch(`${this.url}/signup`, this.PrepFetch(data))
-            .then(x => x.json())
-            .then(y => {
-                if (!y["state"]) {
-                    console.log(y["message"])
-                    // Alert user using the message key to know why signup failed
-                }
-                console.log(y)
-                this.CreateDBStructure()
-            })
+        .then(x => x.json())
+        .then(y => {
+            if (!y["state"]) {
+                console.log(y["message"])
+                // Alert user using the message key to know why signup failed
+            }
+            console.log(y)
+            this.CreateDBStructure()
+            location.href = "home.html"
+        })
     }
 
     SignIn(form) {
@@ -144,7 +145,11 @@ class Buses {
             "seat_config": seat_config
         }
 
-        fetch(`${this.url}/bus/${this.bus_url}`, this.PrepFetch(data))
+        if(bus_url === "update"){
+            this.UpdateBus()
+            return
+        }
+        fetch(`${this.url}/bus/add`, this.PrepFetch(data))
         .then(x => x.json())
         .then(y => {
             console.log(y)
@@ -177,19 +182,21 @@ class Buses {
     }
 
     UpdateBus(){
+        var form = document.forms["bus_form"]
         var licesnse_plate = form["licesnse_plate"].value
         var no_seats = form["no_seats"].value
         var model = form["model"].value
         var colour = form["colour"].value
         var seat_config = form["seat_config"].value
         var data = {
+            "bus_id": "",
             "licesnse_plate": licesnse_plate,
             "no_seats": no_seats,
             "model": model,
             "colour": colour,
             "seat_config": seat_config
         }
-        fetch(`${this.url}/bus/${bus_url}`, this.PrepFetch(data))
+        fetch(`${this.url}/bus/update`, this.PrepFetch(data))
         .then(x=>x.json())
         .then(y=>{
             console.log(y)
@@ -298,7 +305,6 @@ class Buses {
         db_data = JSON.parse(db_data)
         db_data["buses"] = bus_data
         localStorage.setItem('db_data', JSON.stringify(db_data))
-        console.log(db_data)
         new Buses().RenderJSONtoDOM(document.getElementById('all_buses_display'))
     }
 
