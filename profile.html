@@ -21,7 +21,7 @@
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="new User().RenderJOSNtoDom(document.getElementById('account_details'), document.getElementById('payment_methods'))">
 
     <div class="osahan-profile">
         <div class="osahan-header-nav shadow-sm bg-danger p-3 d-flex align-items-center">
@@ -30,7 +30,8 @@
                 My Profile
             </h5>
             <div class="ml-auto d-flex align-items-center">
-                <i class="icofont-ui-edit h5 text-white m-0" onclick="document.getElementById('new-driver-form').style.display='block'"></i>
+                <i class="icofont-ui-edit h5 text-white m-0"
+                    onclick="document.getElementById('new-driver-form').style.display='block'; new User().EditUserProfile(document.forms['edit_profile_form'])"></i>
             </div>
         </div>
 
@@ -38,7 +39,7 @@
             <div class="text-center mb-3 position-relative">
                 <img src="img/profile.jpg" class="rounded-pill">
             </div>
-            <h5 class="text-center">Company Name</h5>
+            <h5 class="text-center" id="company_name">Company Name</h5>
             <div class="start-rating f-10 mb-3 text-center">
                 <i class="icofont-star text-danger"></i>
                 <i class="icofont-star text-danger"></i>
@@ -47,7 +48,8 @@
                 <i class="icofont-star text-muted"></i>
                 <span class="text-dark">4.0</span>
             </div>
-            <div class="bg-white rounded-1 shadow-sm p-3 mb-3 w-100">
+
+            <div class="bg-white rounded-1 shadow-sm p-3 mb-3 w-100" id="account_details">
                 <div class="row mx-0 mb-3">
                     <div class="col-6 p-0">
                         <small class="text-muted mb-1 f-10 pr-1">Phone</small>
@@ -79,13 +81,15 @@
                     </div>
                 </div>
             </div>
+
             <hr>
+
             <p class="mb-0 text-dark">Payment Methods</p>
-            <div class="payment-borrad shadow-sm bg-white mt-2 rounded-1">
+            <div class="payment-borrad shadow-sm bg-white mt-2 rounded-1" id="payment_methods">
                 <div class="border-bottom p-3">
                     <div class="w-100 mastercard custom-control custom-radio custom-control-inline mr-0">
-                        <input type="radio" id="customRadiomaster1" name="customRadiocard1"
-                            class="custom-control-input" checked>
+                        <input type="radio" id="customRadiomaster1" name="customRadiocard1" class="custom-control-input"
+                            checked>
                         <label class="custom-control-label small w-100" for="customRadiomaster1">
                             <a href="payment-card.html" class="d-flex align-items-start">
                                 <div class>
@@ -100,8 +104,8 @@
                 </div>
                 <div class="border-bottom p-3">
                     <div class="w-100 mastercard custom-control custom-radio custom-control-inline mr-0">
-                        <input type="radio" id="customRadiomaster1" name="customRadiocard1"
-                            class="custom-control-input" checked>
+                        <input type="radio" id="customRadiomaster1" name="customRadiocard1" class="custom-control-input"
+                            checked>
                         <label class="custom-control-label small w-100" for="customRadiomaster1">
                             <a href="payment-card.html" class="d-flex align-items-start">
                                 <div class>
@@ -116,8 +120,7 @@
                 </div>
                 <div class="p-3">
                     <div class="w-100 visa custom-control custom-radio custom-control-inline mr-0">
-                        <input type="radio" id="customRadiovisa1" name="customRadiocard1"
-                            class="custom-control-input">
+                        <input type="radio" id="customRadiovisa1" name="customRadiocard1" class="custom-control-input">
                         <label class="custom-control-label small w-100" for="customRadiovisa1">
                             <a href="payment-card.html" class="d-flex align-items-start">
                                 <div class>
@@ -131,54 +134,6 @@
                     </div>
                 </div>
             </div>
-            <form action="profile.html" style="display: none;">
-                <div class="d-flex justify-content-center rounded-2 mb-4">
-                    <div class="form-profile w-100">
-                        <div class="text-center mb-3 position-relative">
-                            <div class="position-absolute edit-bt">
-                                <label for="upload-photo" class="mb-0"><span
-                                        class="icofont-pencil-alt-5 text-white"></span></label>
-                                <input type="file" name="photo" id="upload-photo" />
-                            </div>
-                            <img src="img/profile.jpg" class="rounded-pill">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Company Name</label>
-                            <input type="number" class="form-control" placeholder="Enter User Name" value="osahantech">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Mobile Number</label>
-                            <input type="number" class="form-control" placeholder="Enter Mobile Number">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Your Email</label>
-                            <input type="email" class="form-control" placeholder="Enter Your Email">
-                        </div>
-                        <div class="sign-or d-flex align-items-center justify-content-center mb-4 row">
-                            <hr class="mr-2 col-2">
-                            <p class="text-muted text-center py-2 m-0 col">Banking Info</p>
-                            <hr class="ml-4 col-2">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Mpesa Till Number</label>
-                            <!-- <input type="number" class="form-control" placeholder="Enter Till Number"  required> -->
-                            <input type="number" class="form-control" placeholder="Enter Till Number">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Bank Account Number</label>
-                            <input type="number" class="form-control" placeholder="Enter Bank Account (optional)">
-                        </div>
-                        <div class="form-group">
-                            <label class="text-muted f-10 mb-1">Crypto Wallet Address</label>
-                            <input type="text" class="form-control" placeholder="Enter BTC Address (optional)">
-                        </div>
-                        <div class="mb-5">
-                            <a href="home.html" class="btn btn-danger btn-block osahanbus-btn rounded-1">UPDATE
-                                PROFILE</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 
@@ -190,28 +145,28 @@
                 Update Profile
             </h5>
         </div>
-        <form action="verification.html" class="p-4">
-            <label class="text-muted f-10 mb-1 text-center" style="width: 100%;text-align: center;font-size: 15px;">Company
-                Logo</label>
+
+        <form class="p-4" name="edit_profile_form" onsubmit="new User(event).UpdateProfile(this)">
+            <label class="text-muted f-10 mb-1 text-center"
+                style="width: 100%;text-align: center;font-size: 15px;">Company Logo</label>
             <div class="text-center mb-3 position-relative">
                 <div class="position-absolute edit-bt">
-                    <label for="upload-photo" class="mb-0"><span
-                            class="icofont-pencil-alt-5 text-white"></span></label>
+                    <label for="upload-photo" class="mb-0"><span class="icofont-pencil-alt-5 text-white"></span></label>
                     <input type="file" name="photo" id="upload-photo" />
                 </div>
                 <img src="img/profile.jpg" class="rounded-pill">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Business Name</label>
-                <input type="text" class="form-control" placeholder="Enter Company Name">
+                <input type="text" class="form-control" placeholder="Enter Company Name" name="company_name">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Phone Number</label>
-                <input type="text" class="form-control" placeholder="Enter Phone Number">
+                <input type="text" class="form-control" placeholder="Enter Phone Number" name="phone">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Email</label>
-                <input type="email" class="form-control" placeholder="Enter Email Address">
+                <input type="email" class="form-control" placeholder="Enter Email Address" name="email">
             </div>
             <div class="sign-or d-flex align-items-center justify-content-center mb-4 row">
                 <hr class="mr-2 col-2">
@@ -220,23 +175,25 @@
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Mpesa Till Number</label>
-                <input type="number" class="form-control" placeholder="Enter Till Number">
+                <input type="number" class="form-control" placeholder="Enter Till Number" name="till">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Bank Account Number</label>
-                <input type="number" class="form-control" placeholder="Enter Bank Account (optional)">
+                <input type="number" class="form-control" placeholder="Enter Bank Account (optional)" name="bank">
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Crypto Wallet Address</label>
-                <input type="text" class="form-control" placeholder="Enter BTC Address (optional)">
+                <input type="text" class="form-control" placeholder="Enter BTC Address (optional)" name="crypto">
             </div>
-            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">UPDATE ACCOUNT</button>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">UPDATE
+                ACCOUNT</button>
             <p class="text-muted text-center small">
                 Update where applicable
             </p>
         </form>
     </div>
 
+    <script src="TestJS/main.js"></script>
     <script src="vendor/jquery/jquery.min.js" type="3752ac11cd20609a4a9f2091-text/javascript"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="3752ac11cd20609a4a9f2091-text/javascript"></script>
 
@@ -244,12 +201,6 @@
 
     <script type="3752ac11cd20609a4a9f2091-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
 
-    <script src="js/custom.js" type="3752ac11cd20609a4a9f2091-text/javascript"></script>
-    <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon='{"rayId":"86ef9b44084f65ec","version":"2024.3.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
-        crossorigin="anonymous"></script>
 </body>
+
 </html>
