@@ -4,6 +4,7 @@ from admin_users import AdminUser
 from buses import Buses
 # from notifications import SMS, Email
 from generals import Generals
+from buses import Buses
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)

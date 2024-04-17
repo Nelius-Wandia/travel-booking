@@ -154,9 +154,9 @@ class AdminUser:
         "verification": json.loads(response[9])["state"],
         "logo_url": response[12],
         "payment_methods": {
-            "Mpesa": response[6] if response[6] else False,
-            "BankAccount": response[7] if response[7]  else False,
-            "CryptoAddress": response[8] if len(response[8]) > 0 else False
+            "Mpesa": response[6],
+            "BankAccount": response[7],
+            "CryptoAddress": response[8]
         }
         }
         return response
@@ -177,9 +177,9 @@ user = AdminUser(user_id="x7p@9OYV@f")
 #     "crypto_address": "1234",
 #     "logo": "logo"
 # }
-user = AdminUser(user_id="PFCy)kTsAm")
+user = AdminUser(user_id="DeR#G#DCbc")
 # print(user.VerifyCode("am(mz"))
-# user.SetUserState(True)
+user.SetUserState(True)
 # print(user.is_valid())
 # print(user.CreateUser(metadata))
 # user.CreateUserTable()

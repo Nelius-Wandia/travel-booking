@@ -78,7 +78,7 @@ class Buses:
         db.cursor.execute(sql_query, [user_id])
         return db.cursor.fetchall()
 
-bus = Buses(bus_id="ABCD")
+bus = Buses()
 # bus.CreateBusTable()
 # bus.AddBus("h")
 # print(bus.BookFully())
