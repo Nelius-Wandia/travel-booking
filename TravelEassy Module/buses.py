@@ -34,8 +34,19 @@ class Buses:
         db.conn.commit()
 
     def UpdateBus(self, metadata):
-        sql_query = """update buses set """
-        sel_data = []
+        # metadata = {
+        #     "bus_id": bus_id,
+        #     "license_plate": license,
+        #     "no_seats": no_seats,
+        #     "model": model,
+        #     "color": colour,
+        #     "arrangement": seat_config
+        # }
+        print(metadata)
+        sql_query = """update buses set license_plate = %s, no_seats = %s, model = %s, color = %s, arrangement = %s where id = %s"""
+        sql_data = [metadata["license_plate"], metadata["no_seats"], metadata["model"], metadata["color"], metadata["arrangement"], metadata["bus_id"]]
+        db.cursor.execute(sql_query, sql_data)
+        db.conn.commit()
 
     def DeleteBus(self):
         sql_query = """delete from buses where id = %s"""
