@@ -241,7 +241,9 @@ class User {
         var db_data = localStorage.getItem("db_data")
         db_data = JSON.parse(db_data)
         console.log(db_data)
-        if(!db_data){return response}
+        if(!db_data){location.href='signin.html'}
+        if(!db_data["account_profile"]){location.href='signin.html'}
+        if(!db_data["buses"]){location.href='signin.html'}
 
         response.company_name = db_data["account_profile"]["company_name"]
         response.phone = db_data["account_profile"]["phone"]
@@ -288,6 +290,22 @@ class User {
         form["till"].value = account_details["payment"][0]
         form["bank"].value = account_details["payment"][1]
         form["crypto"].value = account_details["payment"][2]
+    }
+
+    RendertoHome(parent_template){
+        console.log(parent_template)
+        var account_details = this.FetchAccountUserData()
+        // console.log(account_details)
+        var home_context = `
+        <img src="img/user1.jpg" class="img-fluid rounded-pill mr-3">
+                    <div class="text-white">
+                        <h6 class="mb-0">${account_details["company_name"]}</h6>
+                        <small>254${account_details["phone"]}</small><br>
+                        <span class="f-10 text-white-50">${account_details["email"]}</span>
+                    </div>
+        `
+        parent_template.innerHTML = home_context
+        console.log(parent_template)
     }
 }
 
@@ -501,4 +519,15 @@ class Buses {
         document.getElementById('new-bus-form').style.display = 'block'
     }
 }
+
+
+class Trips{
+    FetchAllTrips(){
+        
+    }
+}
+
+
+
+
 
