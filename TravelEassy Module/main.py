@@ -2,7 +2,7 @@ from flask import Flask, jsonify, make_response, request, abort
 from flask_cors import CORS
 from admin_users import AdminUser
 from buses import Buses
-# from notifications import SMS, Email
+from notifications import SMS, Email
 from generals import Generals
 from buses import Buses
 
@@ -64,9 +64,9 @@ def Register():
         })
     
     # Send sms verification code set @ user.verification
-    # notification = SMS(user_id=user.user_id)
-    # message = f"TravelEazzy Verification code\n{user.verification}\n Your logistics partner"
-    # notification.SendInstantSMS([phone], message)
+    notification = SMS(user_id=user.user_id)
+    message = f"TravelEazzy Verification code:\n{user.verification}\n Your logistics partner"
+    notification.SendInstantSMS([phone], message)
 
     # Respond to request
     access_token = generals.GenAccessToken(app.config["access_tokens"])

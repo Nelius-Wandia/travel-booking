@@ -19,7 +19,7 @@ payload = {
 }
 
 class SMS:
-    def __init__(self, user_id:str):
+    def __init__(self, user_id:str=""):
         self.user_id = user_id
         self.payload = {
             "apikey":api_key,
@@ -61,7 +61,7 @@ class SMS:
             # Update State to Notification Table based on is_sent
 
     def SendRequest(self):
-        # sms_api_response = requests.post(sms_endpoint_url, data=self.payload)
+        sms_api_response = requests.post(sms_endpoint_url, data=self.payload)
         # create algo to verify is sms is sent or not
         return True
 
@@ -83,9 +83,6 @@ class SMS:
 
 
 
-
-
-
 # Email Static Config
 class Email:
     pass
@@ -93,7 +90,25 @@ class Email:
 
 
 # System Static Config
-pass
+class SystemNotification(SMS):
+    def SendSystemNotification(self, user_id:list, message:str):
+        self.message = message
+        for x in user_id:
+            self.user_id = x
+            self.CreateNotification()
+
+    def CreateNotification(self, type="System"):
+        self.notification_id = self.GenUnique_id()
+        sql_query = """insert into notifications (id, company_id, type, destination, message, status) values(%s, %s, %s, %s, %s, %s)"""
+        sql_data = [self.notification_id, self.user_id, type, self.user_id, self.message, False]
+        db.cursor.execute(sql_query, sql_data)
+        db.conn.commit()
+
+    def FetchSystemNotifications(self, user_id=""):
+        sql_query = """select * from notifications where company_id = %s"""
+        db.cursor.execute(sql_query, [user_id])
+        return db.cursor.fetchall()
+    
 
 
 
@@ -101,3 +116,7 @@ pass
 
 # x = SMS(user_id="i&Tenm9PeO")
 # x.SendInstantSMS([254795359098], message="Testing Message")
+
+# x = SystemNotification()
+# x.SendSystemNotification(user_id=["ebBZ6l)RWm"], message="Testing system Notification")
+# print(x.FetchSystemNotifications(user_id="ebBZ6l)RWm"))

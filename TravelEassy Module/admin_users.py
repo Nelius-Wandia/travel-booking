@@ -103,16 +103,6 @@ class AdminUser:
         return True
     
     def UpdateProfile(self, metadata):
-        # Update fields - (logo, name, phone, email, till, bank, crypto)
-        # metadata = {
-        #     "company_name": "ionextech",
-        #     "phone": 254795359098,
-        #     "email": "machariaandrew1428@gmail.com",
-        #     "till_number": "1234",
-        #     "bank_account": "1234",
-        #     "crypto_address": "1234",
-        #     "logo": "logo"
-        # }
         metadata["bank_account"] = metadata["bank_account"] if len(metadata["bank_account"]) > 5 else None
         metadata["crypto_address"] = metadata["crypto_address"] if len(metadata["crypto_address"]) > 5 else None
         sql_query = """update admin_users set company_name = %s, phone = %s, email = %s, till_number = %s, bank_account = %s, crypto_address = %s, logo_url = %s where id = %s"""
@@ -161,7 +151,7 @@ class AdminUser:
         }
         return response
 
-user = AdminUser(user_id="x7p@9OYV@f")
+# user = AdminUser(user_id="x7p@9OYV@f")
 # user.FetchUserProfile()
 # user.FetchData()
 # user.CreateUserTable()
@@ -177,9 +167,9 @@ user = AdminUser(user_id="x7p@9OYV@f")
 #     "crypto_address": "1234",
 #     "logo": "logo"
 # }
-user = AdminUser(user_id="DeR#G#DCbc")
+# user = AdminUser(user_id="ebBZ6l)RWm")
 # print(user.VerifyCode("am(mz"))
-user.SetUserState(True)
+# user.SetUserState(True)
 # print(user.is_valid())
 # print(user.CreateUser(metadata))
 # user.CreateUserTable()
