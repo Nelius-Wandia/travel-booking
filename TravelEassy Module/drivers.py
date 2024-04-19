@@ -29,7 +29,7 @@ class Drivers:
     def add_driver(self, metadata):
         metadata = {
             "id_number": "12345678",
-            "company_id" :"123",
+            "company_id" :"DeR#G#DCbc",
             "name": "Roadways",
             "gender": "female",
             "email": "machariaandrew1428@gmail.com",
@@ -45,13 +45,58 @@ class Drivers:
                                     metadata["phone_number"], metadata["driving_license"], 
                                     metadata["status"], metadata["trips"]))
         db.conn.commit()
-        print("Driver added successfully")
+        # print("Driver added successfully")
 
+        
     def edit_driver(self, driver_id, metadata):
-        sql_query = "UPDATE drivers SET name = %s, license_number = %s WHERE id = %s"
-        db.cursor.execute(sql_query, (metadata["name"], metadata["license_number"], driver_id))
+        # Extract relevant fields from metadata
+        name = metadata.get("name")
+        gender = metadata.get("gender")
+        id_number = metadata.get("id_number")
+        phone_number = metadata.get("phone_number")
+        email = metadata.get("email")
+        license_number = metadata.get("driving_license")
+
+        # Check if any of the fields are provided for update
+        if not any([name, gender, id_number, phone_number, email, license_number]):
+            print("No fields provided for update.")
+            return
+
+        # Construct SQL query for updating provided fields
+        sql_query = "UPDATE drivers SET "
+        update_values = []
+
+        if name:
+            sql_query += "name = %s, "
+            update_values.append(name)
+        if gender:
+            sql_query += "gender = %s, "
+            update_values.append(gender)
+        if id_number:
+            sql_query += "id_number = %s, "
+            update_values.append(id_number)
+        if phone_number:
+            sql_query += "phone_number = %s, "
+            update_values.append(phone_number)
+        if email:
+            sql_query += "email = %s, "
+            update_values.append(email)
+        if license_number:
+            sql_query += "driving_license = %s, "
+            update_values.append(license_number)
+
+        # Remove trailing comma and space from SQL query
+        sql_query = sql_query.rstrip(", ")
+
+        # Add WHERE clause for specific driver_id
+        sql_query += " WHERE id_number = %s"
+        update_values.append(driver_id)
+
+        # Execute the update query
+        db.cursor.execute(sql_query, tuple(update_values))
         db.conn.commit()
-        print("Driver updated successfully")
+
+
 
     def update_driver_details(self, driver_id, metadata):
         sql_query = "UPDATE drivers SET license_number = %s WHERE id = %s"
