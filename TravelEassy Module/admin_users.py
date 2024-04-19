@@ -104,18 +104,18 @@ class AdminUser:
     
     def UpdateProfile(self, metadata):
         # Update fields - (logo, name, phone, email, till, bank, crypto)
-        metadata = {
-            "company_name": "ionextech",
-            "phone": 254795359098,
-            "email": "machariaandrew1428@gmail.com",
-            "till_number": "1234",
-            "bank_account": "1234",
-            "crypto_address": "1234",
-            "logo": "logo"
-        }
+        # metadata = {
+        #     "company_name": "ionextech",
+        #     "phone": 254795359098,
+        #     "email": "machariaandrew1428@gmail.com",
+        #     "till_number": "1234",
+        #     "bank_account": "1234",
+        #     "crypto_address": "1234",
+        #     "logo": "logo"
+        # }
         metadata["bank_account"] = metadata["bank_account"] if len(metadata["bank_account"]) > 5 else None
         metadata["crypto_address"] = metadata["crypto_address"] if len(metadata["crypto_address"]) > 5 else None
-        sql_query = """update admin_users set company_name = %s, phone = %s, email = %s, till_number = %s, bank_account = %s, crypto_address = %s, logo = %s where id = %s"""
+        sql_query = """update admin_users set company_name = %s, phone = %s, email = %s, till_number = %s, bank_account = %s, crypto_address = %s, logo_url = %s where id = %s"""
         sql_data = [metadata["company_name"], metadata["phone"], metadata["email"], metadata["till_number"], metadata["bank_account"], metadata["crypto_address"], "logo.png", self.user_id]
         db.cursor.execute(sql_query, sql_data)
         db.conn.commit()
@@ -151,7 +151,7 @@ class AdminUser:
         "phone": response[2],
         "email": response[3],
         "means_type": response[4],
-        "verificatioin": json.loads(response[9])["state"],
+        "verification": json.loads(response[9])["state"],
         "logo_url": response[12],
         "payment_methods": {
             "Mpesa": response[6],

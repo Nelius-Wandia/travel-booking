@@ -111,5 +111,5 @@ class Drivers:
         print("Driver deleted successfully")
 
 x = Drivers()
-# x.create_drivers_table()
+x.create_drivers_table()
 x.add_driver(metadata="")

@@ -137,6 +137,44 @@ def Login():
     print(app.config["access_tokens"])
     return response
 
+@app.route('/account_update', methods=['GET', 'POST'])
+def UpdateProfile():
+    user_id = ValidateToken(request.cookies)
+    print(user_id)
+    if not user_id:
+        return jsonify({
+            "state": False,
+            "message": "AuthToken Error",
+            "data": None
+        })
+    
+    request_data = request.get_json()
+    metadata = {
+        "company_name": request_data["company_name"],
+        "phone": request_data["phone"],
+        "email": request_data["email"],
+        "till_number": request_data["till_number"],
+        "bank_account": request_data["bank_account"],
+        "crypto_address": request_data["crypto"],
+        "logo": "logo"
+    }
+
+    user = AdminUser(user_id=user_id)
+    user.UpdateProfile(metadata)
+    user_profile = user.FetchUserProfile()
+    user_buses = Buses().GetAllBuses(user_id=user.user_id)
+    response = jsonify({
+        "state": True,
+        "message": "Account login Successful",
+        "data": {
+            "account_profile": user_profile,
+            "buses": user_buses,
+            "drivers": "Not set"
+        }
+    })
+    return response
+
+
 @app.route("/bus/<string:args>", methods=['GET', 'POST'])
 def AddBus(args):
     user_id = ValidateToken(request.cookies)
@@ -169,6 +207,7 @@ def AddBus(args):
 
     elif args == "update":
         request_data = request.get_json()
+        bus_id = request_data["bus_id"]
         license = request_data["licesnse_plate"]
         no_seats = request_data["no_seats"]
         model = request_data["model"]
@@ -177,7 +216,7 @@ def AddBus(args):
 
         bus = Buses()
         metadata = {
-            "company_id": user_id,
+            "bus_id": bus_id,
             "license_plate": license,
             "no_seats": no_seats,
             "model": model,
