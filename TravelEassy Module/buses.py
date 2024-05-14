@@ -34,14 +34,6 @@ class Buses:
         db.conn.commit()
 
     def UpdateBus(self, metadata):
-        # metadata = {
-        #     "bus_id": bus_id,
-        #     "license_plate": license,
-        #     "no_seats": no_seats,
-        #     "model": model,
-        #     "color": colour,
-        #     "arrangement": seat_config
-        # }
         print(metadata)
         sql_query = """update buses set license_plate = %s, no_seats = %s, model = %s, color = %s, arrangement = %s where id = %s"""
         sql_data = [metadata["license_plate"], metadata["no_seats"], metadata["model"], metadata["color"], metadata["arrangement"], metadata["bus_id"]]
@@ -78,7 +70,17 @@ class Buses:
         db.cursor.execute(sql_query, [user_id])
         return db.cursor.fetchall()
 
-bus = Buses()
+    def GetBusDetails(self):
+        sql_query = """select * from buses where id = %s"""
+        db.cursor.execute(sql_query, [self.bus_id])
+        response = db.cursor.fetchall()
+        if not response: return
+        response = response[0]
+
+        self.plate_number = response[2]
+        self.no_seats = response[3]
+
+bus = Buses(bus_id="&VP)!")
 # bus.CreateBusTable()
 # bus.AddBus("h")
 # print(bus.BookFully())

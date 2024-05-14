@@ -20,7 +20,7 @@
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
 </head>
 
-<body class="bg-warning">
+<body class="bg-warning" onload="new Trips().RenderJOSNtoTrips(document.getElementById('display_trips')); new Buses().RenderJSONtoTrip(document.getElementById('bus'));">
     <div class="osahan-verification padding-bt">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
@@ -60,10 +60,10 @@
                                                         <th>Plate</th>
                                                         <th>Occupancy</th>
                                                         <th>Price(KES)</th>
-                                                        <th>Type</th>
+                                                        <th>Destin</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="display_trips">
                                                     <tr onclick="location.href='bus-details.html'">
                                                         <td>KCQ123T</td>
                                                         <td>98</td>
@@ -127,21 +127,20 @@
                 New Trip
             </h5>
         </div>
-        <form action="verification.html" class="p-4">
+        <!-- <form action="verification.html" class="p-4"> -->
+        <form class="p-4" onsubmit="new Trips(event).CreateTrip(this)">
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Driver ID</label>
-                <select name="" id="" class="form-control">
-                    <option value="">James Kamau</option>
-                    <option value="">Brian Omondi</option>
-                    <option value="">Joy Njeri</option>
+                <select name="driver" id="driver" class="form-control">
+                    <option value="7897">James Kamau</option>
+                    <option value="uh9y8">Brian Omondi</option>
+                    <option value="89u0u">Joy Njeri</option>
                 </select>
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Bus ID</label>
-                <select name="" id="" class="form-control">
-                    <option value="">KAJ 906 K</option>
-                    <option value="">KAJ 906 K</option>
-                    <option value="">KAJ 906 K</option>
+                <select name="bus" id="bus" class="form-control">
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -157,12 +156,20 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="text-muted f-10 mb-1">Price</label>
+                <input type="number" class="form-control" placeholder="Enter Trip Price" name="price" id="price" required>
+            </div>
+            <div class="form-group">
                 <label class="text-muted f-10 mb-1">Origin DateTime</label>
-                <input type="datetime-local" class="form-control" placeholder="Enter Model Type">
+                <input type="datetime-local" class="form-control" placeholder="Enter Model Type" name="depature" id="depature" required>
             </div>
             <div class="form-group">
                 <label class="text-muted f-10 mb-1">Destination DateTime</label>
-                <input type="datetime-local" class="form-control" placeholder="Enter bus colour">
+                <input type="datetime-local" class="form-control" placeholder="Enter bus colour" name="arrival" id="arrival" required>
+            </div>
+            <div class="form-group">
+                <label class="text-muted f-10 mb-1">Trip Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
             </div>
             <button type="submit" class="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4">REGISTER TRIP</button>
             <p class="text-muted text-center small">
@@ -170,14 +177,6 @@
             </p>
         </form>
     </div>
-
-    <script type="96d284817fd6e0fdc8d5ba40-text/javascript" src="vendor/slick/slick.min.js"></script>
-
-    <script src="vendor/select-tool/dist/js/select2.min.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
-
-    <script type="96d284817fd6e0fdc8d5ba40-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
-
-    <script src="js/custom.js" type="96d284817fd6e0fdc8d5ba40-text/javascript"></script>
-    <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
+    <script src="TestJS/main.js"></script>
 </body>
 </html>

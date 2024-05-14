@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, make_response, request, abort
 from flask_cors import CORS
 from admin_users import AdminUser
-from buses import Buses
+from trips import Trips
 from notifications import SMS, Email
 from generals import Generals
 from buses import Buses
@@ -123,12 +123,14 @@ def Login():
     # Fetch User data 
     user_profile = user.FetchUserProfile()
     user_buses = Buses().GetAllBuses(user_id=user.user_id)
+    user_trips = Trips().FetchTrips(user_id=user.user_id)
     response = jsonify({
         "state": True,
         "message": "Account login Successful",
         "data": {
             "account_profile": user_profile,
             "buses": user_buses,
+            "trips": user_trips,
             "drivers": "Not set"
         }
     })
@@ -163,17 +165,18 @@ def UpdateProfile():
     user.UpdateProfile(metadata)
     user_profile = user.FetchUserProfile()
     user_buses = Buses().GetAllBuses(user_id=user.user_id)
+    user_trips = Trips().FetchTrips(user_id=user.user_id)
     response = jsonify({
         "state": True,
         "message": "Account login Successful",
         "data": {
             "account_profile": user_profile,
             "buses": user_buses,
+            "trips": user_trips,
             "drivers": "Not set"
         }
     })
     return response
-
 
 @app.route("/bus/<string:args>", methods=['GET', 'POST'])
 def AddBus(args):
@@ -238,5 +241,71 @@ def AddBus(args):
         "data": user_buses
     })
     
+@app.route("/trip/<string:args>", methods=['GET', 'POST'])
+def Journies(args):
+    user_id = ValidateToken(request.cookies)
+    print(user_id)
+    if not user_id:
+        return jsonify({
+            "state": False,
+            "message": "AuthToken Error",
+            "data": None
+        })
+    
+    if args == "add":
+        print(request.get_json())
+        request_data = request.get_json()
+        driver_id = request_data["driver_id"]
+        bus_id = request_data["bus_id"]
+        origin = request_data["origin"]
+        destination = request_data["destination"]
+        depature = request_data["depature"]
+        arrival = request_data["arrival"]
+        price = request_data["price"]
+        message = request_data["message"]
+
+        bus = Buses(bus_id=bus_id)
+        bus.GetBusDetails()
+        metadata = {
+            "company_id": user_id,
+            "bus_id": bus_id,
+            "driver_id": driver_id,
+            "origin": {
+                "address": origin,
+                "datetime": depature
+            },
+            "destination": {
+                "address": destination,
+                "datetime": arrival
+            },
+            "seat_config": f"0:{bus.no_seats}",
+            "price": price,
+            "message": message
+        }
+
+        trip = Trips()
+        trip.CreateTrip(metadata=metadata)
+    elif args == "update":
+        pass
+
+    elif args == "delete":
+        pass
+
+    user = AdminUser(user_id=user_id)
+    user_profile = user.FetchUserProfile()
+    user_buses = Buses().GetAllBuses(user_id=user_id)
+    user_trips = Trips().FetchTrips(user_id=user_id)
+    response = jsonify({
+        "state": True,
+        "message": "Account login Successful",
+        "data": {
+            "account_profile": user_profile,
+            "buses": user_buses,
+            "trips": user_trips,
+            "drivers": "Not set"
+        }
+    })
+    return response
+
 if __name__ == '__main__':
     app.run(debug=True)

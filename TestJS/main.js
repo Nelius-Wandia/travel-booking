@@ -1,5 +1,13 @@
 end_point_url = "http://127.0.0.1:5000"
 
+class Initializer{
+    // Connect to a server by web-socket
+    // Get an update from the server-db
+    // Exchange Relevant info
+    // Close connectioin
+}
+
+
 class User {
     // User_id & Access_token are preset within cookies
     constructor(event = false) {
@@ -340,17 +348,18 @@ class Buses {
             return
         }
         fetch(`${this.url}/bus/add`, this.PrepFetch(data))
-            .then(x => x.json())
-            .then(y => {
-                console.log(y)
-                if (!y["state"]) {
-                    if (y["message"] === "AuthToken Error") {
-                        location.href = "signin.html"
-                    }
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            if (!y["state"]) {
+                if (y["message"] === "AuthToken Error") {
+                    location.href = "signin.html"
                 }
+            }else{
                 this.StoreJSONBusData(y["data"])
                 this.CloseAddBusForm()
-            })
+            }
+        })
     }
 
     DeleteBus(bus_id) {
@@ -494,6 +503,24 @@ class Buses {
         parent_element.innerHTML = rendered_buses
     }
 
+    RenderJSONtoTrip(parent_element){
+        var db_data = localStorage.getItem("db_data")
+        if (!db_data) { return }
+        db_data = JSON.parse(db_data)
+
+        var all_buses = db_data["buses"]
+        console.log("cijwoiejcoijewoicw")
+        console.log(all_buses)
+
+        var text_context = ""
+        for(var i of all_buses){
+            text_context += `
+            <option value="${i[0]}">${i[2]}</option>
+            `
+        }
+        parent_element.innerHTML = text_context
+    }
+
     StoreJSONBusData(bus_data) {
         var db_data = localStorage.getItem('db_data')
         db_data = JSON.parse(db_data)
@@ -522,8 +549,157 @@ class Buses {
 
 
 class Trips{
-    FetchAllTrips(){
+    constructor(event=null){
+        if(event){
+            event.preventDefault()
+        }
+        this.url = `${end_point_url}`
+        this.trip_id = ""
+    }
+
+    CreateTrip(form){
+        console.log(form)
+        var data = {
+            "driver_id": form["driver"].value,
+            "bus_id": form["bus"].value,
+            "origin": "Mombasa",
+            "destination": "Kisumu",
+            "depature": form["depature"].value,
+            "arrival": form["arrival"].value,
+            "price": form["price"].value,
+            "message": form["message"].value,
+        }
+
+        fetch(`${this.url}/trip/add`, this.PrepFetch(data))
+        .then(x => x.json())
+        .then(y => {
+            console.log(y)
+            if (!y["state"]) {
+                if (y["message"] === "AuthToken Error") {
+                    location.href = "signin.html"
+                }
+            }else{
+                this.StoreJSONData(y["data"])
+                setTimeout(()=>{
+                    location.reload()
+                }, 1000)
+            }
+        })
+    }
+
+    RenderJOSNtoTrips(parent_element){
+        var trips = this.FetchTrips()
+        console.log(trips)
         
+        var text_context = ""
+        for(var x of trips){
+            var occupied_seats = x[5].split(":")[0]
+            var unoccupied_seats = x[5].split(":")[1]
+            var percent = (occupied_seats/(occupied_seats+unoccupied_seats)) * 100
+            text_context += `
+            <tr onclick="new Trips().CachePressedTrip('${x}')">
+                <td>${x[8].substring(0, 3)}</td>
+                <td>${percent}</td>
+                <td>KES ${x[6]}</td>
+                <td>${x[3]}</td>
+            </tr>
+            `
+        }
+        parent_element.innerHTML = text_context
+    }
+
+    RenderJOSNtoBusDetails(parent_element){
+        // var bus_details = localStorage.getItem()
+        parent_element.innerHTML = `
+        <div class="px-3 py-3 tic-div border-bottom d-flex">
+                <img src="img/listing/item1.png" class="img-fluid border rounded p-1 shape-img mr-3">
+                <div class="w-100">
+                    <h6 class="my-1 l-hght-18 font-weight-bold">Bus Plate Number</h6>
+                    <div class="start-rating f-10">
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-danger"></i>
+                        <i class="icofont-star text-muted"></i>
+                        <span class="text-dark">90</span>
+                        <div class="d-flex mt-2">
+                            <p class="m-0"><i class="icofont-google-map mr-1 text-danger"></i><span
+                                    class="small">Destination Address</span></p>
+                            <p class="small ml-auto mb-0"><i class="icofont-bus mr-1 text-danger"></i> St. KES 1,200</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-3">
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Driver</small>
+                        <p class="small mb-0 l-hght-14">Driver's Name</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Origin Address</small>
+                        <p class="small mb-0 l-hght-14">From Location</p>
+                    </div>
+                </div>
+                <div class="row mx-0 mb-3">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Depature</small>
+                        <p class="small mb-0 l-hght-14">12/10/2024 - 12:30 Pm</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Arrival</small>
+                        <p class="small mb-0 l-hght-14">12/12/2024 - 12:30 Pm</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Occupied:Empty Seats</small>
+                        <p class="small mb-0 l-hght-14">25:11</p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <small class="text-muted mb-1 f-10 pr-1">Trip Type</small>
+                        <p class="small mb-0 l-hght-14">Round Trid</p>
+                    </div>
+                </div>
+            </div>
+        `
+
+    }
+
+    FetchTrips(){
+        var db_data = localStorage.getItem("db_data")
+        if(!db_data){return}
+
+        var response = ""
+        db_data = JSON.parse(db_data)
+        console.log(db_data)
+        if(db_data.trips.length === 0){return}
+
+        return db_data["trips"]
+
+
+    }
+
+    PrepFetch(data) {
+        var options = {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+        return options
+    }
+
+    StoreJSONData(json_data) {
+        localStorage.setItem("db_data", JSON.stringify(json_data))
+    }
+
+    CachePressedTrip(metadata){
+        metadata = metadata.split(",")
+        console.log(metadata)
+        location.href = "bus-details.html"
     }
 }
 

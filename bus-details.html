@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from askbootstrap.com/mobileui/osahanbus/bus-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:02 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,11 +16,10 @@
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
     <link href="css/custom.css" rel="stylesheet">
-
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-light" onload="new Trips().RenderJOSNtoBusDetails(document.getElementById('trip_info'))">
 
     <div class="Bus-Details padding-bt">
         <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
@@ -36,7 +33,7 @@
             </div>
         </div>
 
-        <div class="list_item m-0 bg-white">
+        <div class="list_item m-0 bg-white" id="trip_info">
             <div class="px-3 py-3 tic-div border-bottom d-flex">
                 <img src="img/listing/item1.png" class="img-fluid border rounded p-1 shape-img mr-3">
                 <div class="w-100">
@@ -89,6 +86,7 @@
                 </div>
             </div>
         </div>
+
         <ul class="nav nav-pills mb-0 nav-justified bg-white px-3 py-2 border-top border-bottom" id="pills-tab"
             role="tablist">
             <li class="nav-item" role="presentation">
@@ -104,6 +102,7 @@
                     aria-controls="pills-contact" aria-selected="false"><i class="icofont-food-basket"></i>Procucts</a>
             </li>
         </ul>
+
         <div>
             <div class="active" id="pills-home">
                 <div class="bus-details pt-3 pb-0 px-3">
@@ -495,22 +494,8 @@
         <a href="select-seat.html" class="btn btn-danger btn-block osahanbus-btn rounded-1">Cancel Trip</a>
     </div>
 
-    <script src="vendor/jquery/jquery.min.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
-
-    <script type="2154b8e373ba1512900ef4dd-text/javascript" src="vendor/slick/slick.min.js"></script>
-
-    <script type="2154b8e373ba1512900ef4dd-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
-
+    <script src="TestJS/main.js"></script>
     <script src="js/custom.js" type="2154b8e373ba1512900ef4dd-text/javascript"></script>
     <script src="cdn/rocket-loader.min.js" data-cf-settings="96d284817fd6e0fdc8d5ba40-|49" defer></script>
-    <!-- <script>
-        setInterval(() => {
-            location.reload()
-        }, 3000)
-    </script> -->
 </body>
-
-<!-- Mirrored from askbootstrap.com/mobileui/osahanbus/bus-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2024 07:33:03 GMT -->
-
 </html>
